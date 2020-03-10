@@ -24,7 +24,14 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::guest())
+        {
+            abort(403);
+        }
+        $programs = Program::orderBy('name')->get();
+        return view('courses/create', [
+            'programs'  => $programs,
+        ]);
     }
 
     /**
