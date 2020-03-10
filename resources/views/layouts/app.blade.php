@@ -43,6 +43,12 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Mål och Framsteg</a>
                         </li>
+                        @endif
+
+                        @if(Auth::user()->type === 'admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="/adminOnlyPage">Admin</a>
+                        </li>
 
                         @endif
 
