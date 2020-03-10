@@ -10,8 +10,9 @@ class Comment extends Model
 
     protected $fillable = [
         'user_id',
-        'title',
-        'content'
+        'author',
+        'content',
+        'status'
     ];
 
     protected $attributes = [
