@@ -48,14 +48,20 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Mål och Framsteg</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/memberOnlyPage">Din Sida</a>
+                        </li>
                         @endif
 
                         @if(Auth::user()->type === 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="/adminOnlyPage">Admin</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="/courses/create">Add a course</a>
+                        </li>
                         @endif
+                    @endif
 
                     </ul>
 
