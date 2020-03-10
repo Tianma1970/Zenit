@@ -24,6 +24,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $courses = Course::orderBy('title')->get();
+
+        return view('home', [
+            'courses'   => $courses
+        ]);
+    }
+
+    public function member(Request $req)
+    {
+
+        // $users = DB::table('users')->get();
+
+        return view('middleware')->withMessage("Member");
+    }
+
+    public function admin(Request $req)
+    {
+        return view('middleware')->withMessage("Admin");
     }
 }
