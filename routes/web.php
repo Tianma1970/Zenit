@@ -20,3 +20,26 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/**
+ * AUTH ROUTES
+ * Routes for member
+ */
+Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function()
+{
+    Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
+});
+
+/**
+ * Routes for admin
+ */
+Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function()
+{
+    Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+
+    Route::get('/comments/create', 'CommentController@create');
+    Route::get('comments/show', 'CommentController@show');
+    Route::post('comments/store', 'CommentController@store');
+});
+
