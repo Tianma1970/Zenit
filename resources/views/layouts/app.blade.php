@@ -55,10 +55,10 @@
 
                         @if(Auth::user()->type === 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="/adminOnlyPage">Admin</a>
+                            <a class="nav-link" href="/courses/create">Add a course</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/courses/create">Add a course</a>
+                            <a class="nav-link" href="/adminOnlyPage">Admin</a>
                         </li>
                         @endif
                     @endif
