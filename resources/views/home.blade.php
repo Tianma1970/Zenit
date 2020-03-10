@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in as <strong>{{ strtoupper(Auth::user()->type )}}</strong>!<br>
+
+                    Member Page: <a href="{{ url('/')}}/memberOnlyPage">Member</a><br>
+                    Admin Page: <a href="{{ url('/')}}/adminOnlyPage">Admin</a>
                 </div>
             </div>
         </div>
