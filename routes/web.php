@@ -30,6 +30,8 @@ Route::get('news/show', 'NewsController@show');
 Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function()
 {
     Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
+
+    Route::resource('/projects', 'ProjectController');
 });
 
 /**
