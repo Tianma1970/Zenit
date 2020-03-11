@@ -23,9 +23,13 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create()    {
+
+        if(Auth::guest())
+        {
+            abort(403);
+        }
+        return view('news/create');
     }
 
     /**
@@ -36,7 +40,17 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd('store');
+        $validData = $request->validate([
+            'title'     => 'required',
+            'content'   => 'required'
+        ]);
+
+        $validData['user_id'] = Auth::id();
+
+        $news = News::create($validData);
+
+        return redirect('/home')->with('status', 'News created successfully');
     }
 
     /**
