@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('news/show', 'NewsController@show');
 
 /**
  * AUTH ROUTES
