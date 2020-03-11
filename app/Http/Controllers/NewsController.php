@@ -40,7 +40,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //dd('store');
+
         $validData = $request->validate([
             'title'     => 'required',
             'content'   => 'required'
