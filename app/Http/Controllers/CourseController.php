@@ -110,6 +110,9 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+
+        $course->delete();
+
+        return redirect('home')->with('status', 'Course deleted successfully');
     }
 }
