@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Program;
 use App\Course;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+
+    /**
+     * Validation
+     */
+
+    protected $validationRules = [
+        'title'     => 'required|min:3',
+        'content'   => 'required|min:8'
+    ];
     /**
      * Display a listing of the resource.
      *
