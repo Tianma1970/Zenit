@@ -38,6 +38,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
     Route::resource('/courses', 'CourseController');
+    Route::resource('/news', 'NewsController');
     Route::get('/comments/create', 'CommentController@create');
     Route::get('comments/show', 'CommentController@show');
     Route::post('comments/store', 'CommentController@store');
