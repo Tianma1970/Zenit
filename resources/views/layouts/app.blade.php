@@ -54,12 +54,19 @@
                         @endif
 
                         @if(Auth::user()->type === 'admin')
-                        <li class="nav-item">
-                            <a class="nav-link" href="/courses/create">Add a course</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/adminOnlyPage">Admin</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Add
+                            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/courses/create">create a course</a>
+                        <a class="dropdown-item" href="/news/create">add some news</a>
+                        </li>
+
                         @endif
                     @endif
 
