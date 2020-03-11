@@ -32,7 +32,12 @@
             <div class="card">
                 <div class="card-header">News</div>
                 <div class="card-body">
-
+                    <ul>
+                        @foreach($news as $news)
+                        <li><h3>{{ $news->title }}</h3>
+                            <p>{{ $news->content }}</p></li><hr>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
