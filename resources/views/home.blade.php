@@ -34,7 +34,11 @@
                 <div class="card-body">
                     <ul>
                         @foreach($news as $news)
+                        @if(Auth::user()->type === 'admin')
+                        <li><h3><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h3>
+                        @else
                         <li><h3>{{ $news->title }}</h3>
+                        @endif
                             <p>{{ $news->content }}</p></li><hr>
                         @endforeach
                     </ul>
