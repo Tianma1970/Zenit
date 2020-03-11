@@ -5,24 +5,41 @@
     @include('partials/status')
     <div class="row justify-content-center">
         <div class="col-md-3">
+            <div class="card-header">Courses</div>
+            <div class="accordion mt-3" id="accordionExample">
+            @foreach($courses as $course)
             <div class="card">
-                <div class="card-header">Courses</div>
-                <div class="card-body">
-                    <ul>
-                        @foreach($courses as $course)
-                        <li>{{ $course->title}}</li>
-                        @endforeach
-                    </ul>
+                <div class="card-header" id="courseheading{{ $course->id }}">
+                    <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#course{{ $course->id }}" aria-expanded="false" aria-controls="course{{ $course->id }}">
+                        {{ $course->title }}
+                </button>
+                </div>
+
+                <div id="course{{ $course->id }}" class="collapse" aria-labelledby="courseheading{{ $course->id }}" data-parent="#accordionExample">
+                    <div class="card-body">
+                        {{ $course->content }}<br>
+                        @if(Auth::user()->type === 'member')
+                            <a href="projects/" class="btn btn-info">Ladda upp dit projekt</a>
+                        @endif
+                    </div>
                 </div>
             </div>
+            @endforeach
+        </div>
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">Welcome: {{ Auth::user()->name }}</div>
+                <div class="card-header">Welcome: {{ Auth::user()->name }},
+                    you are logged in as a <strong>{{ strtoupper(Auth::user()->type )}}</strong>!<br>
+                </div>
 
                 <div class="card-body">
-                    You are logged in as <strong>{{ strtoupper(Auth::user()->type )}}</strong>!<br>
-
+                    @if(Auth::user()->type === 'member')
+                        @foreach($programs as $program)
+                            <h4>Your Program is  {{ $program->name }}</h4><br>
+                        @endforeach
+                    @endif
                     Member Page: <a href="{{ url('/')}}/memberOnlyPage">Member</a><br>
                     Admin Page: <a href="{{ url('/')}}/adminOnlyPage">Admin</a>
                 </div>
