@@ -20,9 +20,10 @@
                     <div class="card-body">
                         {{ $course->content }}<br>
                         @if(Auth::user()->type === 'admin')
-                            <form method="post" action="/courses/{{ $course->id }}">
-                                @csrf
-                                @method("DELETE")
+                        <form method="post" action="/courses/{{ $course->id }}">
+                            @method("DELETE")
+                            @csrf
+                                <a href="/courses/{{ $course->id}}/edit" class="btn btn-info mt-3">Edit</a>
                                 <input type="submit" value="Delete" class="btn btn-danger mt-3"></input>
                             </form>
                         @endif
