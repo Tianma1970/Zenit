@@ -99,7 +99,12 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $validData = $request->validate($this->validationRules);
+        $news->title = $validData['title'];
+        $news->content = $validData['content'];
+
+        $news->save();
+        return redirect('/home')->with('status', 'News updated successfully');
     }
 
     /**
