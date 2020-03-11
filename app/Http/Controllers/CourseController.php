@@ -87,7 +87,10 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+
+        return view('courses/edit', [
+            'course'   => $course
+        ]);
     }
 
     /**
