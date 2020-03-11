@@ -102,7 +102,12 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $validData = $request->validate($this->validationRules);
+        $course->title = $validData['title'];
+        $course->content = $validData['content'];
+        $course->save();
+
+        return redirect('home')->with('status', 'Course edited successfully');
     }
 
     /**
