@@ -19,6 +19,15 @@
                 <div id="course{{ $course->id }}" class="collapse" aria-labelledby="courseheading{{ $course->id }}" data-parent="#accordionExample">
                     <div class="card-body">
                         {{ $course->content }}<br>
+                        @if(Auth::user()->type === 'admin')
+                            <form method="post" action="/courses/{{ $course->id }}">
+                                @csrf
+                                @method("DELETE")
+                                <input type="submit" value="Delete" class="btn btn-danger mt-3"></input>
+                            </form>
+                        @endif
+                        <hr>
+                        <small>{{ $course->points }} YH poäng</small>
                         @if(Auth::user()->type === 'member')
                             <a href="projects/" class="btn btn-info">Ladda upp dit projekt</a>
                         @endif
