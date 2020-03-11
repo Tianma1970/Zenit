@@ -13,6 +13,16 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Validation
+     */
+
+    protected $validationRules = [
+        'title'     => 'required:min:3',
+        'content'   => 'required:min:8'
+    ];
+
     public function index()
     {
         //
