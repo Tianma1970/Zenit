@@ -85,7 +85,9 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('/news/edit', [
+            'news'  => $news
+        ]);
     }
 
     /**
