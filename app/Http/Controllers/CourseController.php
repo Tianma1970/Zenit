@@ -53,7 +53,19 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validData = $request->validate([
+            'program_id'    => 'required',
+            'title'         => 'required',
+            'content'       => 'required',
+            'points'        => 'required'
+        ]);
+
+        $validData['user_id'] = Auth::id();
+
+        $course = course::create($validData);
+
+        return redirect('/home')->with('status', 'Course created successfully');
     }
 
     /**
