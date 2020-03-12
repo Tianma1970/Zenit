@@ -23,10 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('news/show', 'NewsController@show');
 
+
 /**
- * AUTH ROUTES
  * Routes for member
- */
+ *  */
+
+
 Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function()
 {
     Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
@@ -38,23 +40,27 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
  * Routes for admin
  */
 
- Route::middleware(['auth'])->group(function() {
-
-    //uploading profile picture
-    Route::get('/upload', 'ProfilePictureController@index');
-    Route::post('/store', 'ProfilePictureController@store');
- });
-
 Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
-    Route::resource('/courses', 'CourseController');
-    // Route::resource('/news', 'NewsController');
-    // Route::post('/destroy', 'NewsController@destroy');
+    Route::post('/courses', 'CourseController@store');
+    Route::get('/courses/create', 'CourseController@create');
+    Route::get('/courses/{course}/edit', 'CourseController@edit');
     Route::resource('/news', 'NewsController');
     Route::post('/update', 'NewsController@update');
     Route::get('/comments/create', 'CommentController@create');
     Route::get('comments/show', 'CommentController@show');
     Route::post('comments/store', 'CommentController@store');
+});
+
+/**
+ * AUTH ROUTES in general
+ * */
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/courses/{course}', 'CourseController@show');
+    //uploading profile picture
+    Route::get('/upload', 'ProfilePictureController@index');
+    Route::post('/store', 'ProfilePictureController@store');
 });
 
