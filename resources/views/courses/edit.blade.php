@@ -43,12 +43,59 @@
                                         </div>
                                     </div>
 
+                                    <!--Goal-->
+                                    <div class="form-group">
+                                        <label for="goal">Goal</label>
+                                        <input type="textarea" id="goal" name="goal"
+                                         class="form-control" required value="{{ old('goal') ? old('goal') : $course->goal }}"placeholder="Syfte och mål">{{ old      ('goal') }}
+                                    </div>
+
                                     <!--Content-->
 
                                     <div class="form-group">
                                         <label for="content">Content</label>
                                         <input type="textarea" id="content" name="content"
-                                         class="form-control" required value="{{ old('content') ? old('content') : $course->content }}"placeholder="Course description">{{ old                     ('content') }}</textarea>
+                                         class="form-control" required value="{{ old('content') ? old('content') : $course->content }}"placeholder="Kursens innehåll">{{ old ('content') }}</textarea>
+                                    </div>
+
+                                    <!--Knowledge-->
+
+                                    <div class="form-group">
+                                        <label for="knowledge">knowledge</label>
+                                        <input type="textarea" id="knowledge" name="knowledge"
+                                         class="form-control" required value="{{ old('knowledge') ? old('knowledge') : $course->knowledge }}"placeholder="Kunskaper">{{ old ('knowledge') }}
+                                    </div>
+
+                                    <!--Skills-->
+
+                                    <div class="form-group">
+                                        <label for="skills">Skills</label>
+                                        <input type="textarea" id="skills" name="skills"
+                                         class="form-control" required value="{{ old('skills') ? old('skills') : $course->skills }}"placeholder="Färdigheter">{{ old ('skills') }}
+                                    </div>
+
+                                    <!--Competence-->
+
+                                    <div class="form-group">
+                                        <label for="competence">Competence</label>
+                                        <input type="textarea" id="competence" name="competence"
+                                         class="form-control" required value="{{ old('competence') ? old('competence') : $course->competence }}"placeholder="Kompetenser">{{ old ('competence') }}
+                                    </div>
+
+                                    <!--Forms-->
+
+                                     <div class="form-group">
+                                        <label for="forms">Forms</label>
+                                        <input type="textarea" id="forms" name="forms"
+                                         class="form-control" required value="{{ old('forms') ? old('forms') : $course->forms }}"placeholder="Betygskriterier">{{ old ('forms') }}
+                                    </div>
+
+                                    <!--Literature-->
+
+                                     <div class="form-group">
+                                        <label for="literature">Literature</label>
+                                        <input type="textarea" id="literature" name="literature"
+                                         class="form-control" required value="{{ old('literature') ? old('literature') : $course->literature }}"placeholder="Rekommenderad litteratur och dokumentation">{{ old ('literature') }}
                                     </div>
 
                                     <!--Submit-->
