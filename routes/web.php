@@ -37,6 +37,14 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
 /**
  * Routes for admin
  */
+
+ Route::middleware(['auth'])->group(function() {
+
+    //uploading profile picture
+    Route::get('/upload', 'ProfilePictureController@index');
+    Route::post('/store', 'ProfilePictureController@store');
+ });
+
 Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
