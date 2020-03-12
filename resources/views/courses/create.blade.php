@@ -10,8 +10,6 @@
                         <div class="jumbotron">
                             <div class="card-title">
 
-                                {{--  @include('partials/validation_errors')
-                                @include('partials/status')  --}}
                             </div>
                             <form method="POST" action="/courses" class="col-8">
                             @csrf
@@ -41,7 +39,7 @@
                                                 <label for="title">Title</label>
                                                 <input type="text" id="title"
                                                   name="title" value="{{ old('title') }}"
-                                                  placeholder="Course Title"
+                                                  placeholder="Titel"
                                                   class="form-control">
                                             </div>
                                         </div>
@@ -56,13 +54,55 @@
                                         </div>
                                     </div>
 
+                                    <!--Goal-->
+                                        <div class="form-group">
+                                            <label for="goal">Goal</label>
+                                            <textarea id="goal" name="goal"
+                                            class="form-control" placeholder="Syfte och mål">{{ old        ('goal') }}</textarea>
+                                        </div>
+
                                     <!--Content-->
 
                                     <div class="form-group">
                                         <label for="content">Content</label>
                                         <textarea id="content" name="content"
-                                         class="form-control" placeholder="Course description">{{ old                     ('content') }}</textarea>
+                                         class="form-control" placeholder="Kursbeskrivning">{{ old                     ('content') }}</textarea>
                                     </div>
+
+                                    <!--Knowledge-->
+                                        <div class="form-group">
+                                            <label for="knowledge">Knowledge</label>
+                                            <textarea id="knowledge" name="knowledge"
+                                             class="form-control" placeholder="Kunskaper">{{ old          ('knowledge') }}</textarea>
+                                        </div>
+
+                                    <!--Skills-->
+                                        <div class="form-group">
+                                            <label for="skills">Skills</label>
+                                            <textarea id="skills" name="skills"
+                                             class="form-control" placeholder="Färdigheter">{{ old      ('skills') }}</textarea>
+                                        </div>
+
+                                    <!--Competence-->
+                                        <div class="form-group">
+                                            <label for="competence">Competence</label>
+                                            <textarea id="competence" name="competence"
+                                             class="form-control" placeholder="Kompetenser">{{ old      ('competence') }}</textarea>
+                                        </div>
+
+                                    <!--Forms-->
+                                        <div class="form-group">
+                                            <label for="forms">Forms</label>
+                                            <textarea id="forms" name="forms"
+                                             class="form-control" placeholder="Betygskriterier">{{ old('forms') }}</textarea>
+                                        </div>
+
+                                    <!Literature-->
+                                        <div class="form-group">
+                                            <label for="literature">Literature</label>
+                                            <textarea id="literature" name="literature"
+                                             class="form-control" placeholder="Rekommenderad litteratur och dokumentation">{{ old('literature') }}</textarea>
+                                        </div>
 
                                     <!--Submit-->
                                     <div class="form-group">
