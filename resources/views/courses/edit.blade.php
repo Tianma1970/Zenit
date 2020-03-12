@@ -25,10 +25,13 @@
                                                 <label for="title">Title</label>
                                                 <input type="text" id="title"
                                                   name="title" required value="{{ old('title') ? old('title') : $course->title }}"
-                                                  placeholder="Course Title"
+                                                  placeholder="Titel"
                                                   class="form-control">
                                             </div>
                                         </div>
+
+                                        <!--Points-->
+
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="points">Points</label>
