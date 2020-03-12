@@ -44,7 +44,7 @@
 
                                     <div class="form-group">
                                         <label for="content">Content</label>
-                                        <textarea id="content" name="content"
+                                        <input type="textarea" id="content" name="content"
                                          class="form-control" required value="{{ old('content') ? old('content') : $course->content }}"placeholder="Course description">{{ old                     ('content') }}</textarea>
                                     </div>
 
