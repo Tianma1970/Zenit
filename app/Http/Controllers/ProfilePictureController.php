@@ -14,8 +14,18 @@ class ProfilePictureController extends Controller
         return view('upload/index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $user = Auth::user();
 
+        $tmpImage = $request->file('image');
+        $filename = 'user_image' . $user->id . '.' . $tmpImage->getClientOriginalExtension();
+        $tmpImage->move('images', $filename);
+
+        $user->user_image = $filename;
+
+        $user->save();
+
+        return redirect('/home');
     }
 }
