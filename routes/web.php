@@ -43,6 +43,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
 Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+    Route::resource('/courses', 'CourseController');
     Route::post('/courses', 'CourseController@store');
     Route::get('/courses/create', 'CourseController@create');
     Route::get('/courses/{course}/edit', 'CourseController@edit');
