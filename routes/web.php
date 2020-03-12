@@ -33,7 +33,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
 {
     Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
 
-    Route::resource('/projects', 'ProjectController');
+    Route::get('/projects', 'ProjectController@create');
 });
 
 /**
