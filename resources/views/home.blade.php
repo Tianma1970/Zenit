@@ -50,6 +50,12 @@
                             <h4>Your Program is  {{ $program->name }}</h4><br>
                         @endforeach
                     @endif
+
+                    @if(Auth::user()->user_image)
+                        <div class="col-12 text-center">
+                            <img src="/images/{{Auth::user()->user_image}}"width='150' height='150'>
+                        </div>
+                    @endif
                     Member Page: <a href="{{ url('/')}}/memberOnlyPage">Member</a><br>
                     Admin Page: <a href="{{ url('/')}}/adminOnlyPage">Admin</a>
                 </div>
@@ -66,7 +72,12 @@
                         @else
                         <li><h3>{{ $news->title }}</h3>
                         @endif
-                            <p>{{ $news->content }}</p></li><hr>
+                            <p>{{ $news->content }}</p></li>
+
+                            @if($news->author)
+                                <small><i>written by</i> {{ $news->author }}</small>
+                            @endif
+                            <hr>
                         @endforeach
                     </ul>
                 </div>

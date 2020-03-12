@@ -85,7 +85,11 @@
                                 </li>
                             @endif
                         @else
+
+                            <img src="/images/{{Auth::user()->user_image}}" class="mt-1" width='30' height='30'>
+
                             <li class="nav-item dropdown">
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
