@@ -4,7 +4,7 @@
 <div class="container">
     @include('partials/status')
     <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card-header">Courses</div>
             <div class="accordion mt-3" id="accordionExample">
             @foreach($courses as $course)
@@ -39,7 +39,7 @@
             @endforeach
         </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-header">Welcome: {{ Auth::user()->name }},
                     you are logged in as a <strong>{{ strtoupper(Auth::user()->type )}}</strong>!<br>
