@@ -15,8 +15,14 @@ class CourseController extends Controller
      */
 
     protected $validationRules = [
-        'title'     => 'required|min:3',
-        'content'   => 'required|min:8'
+        'title'         => 'required|min:3',
+        'goal'          => 'required|min:8',
+        'knowledge'     => 'required|min:8',
+        'skills'        => 'required|min:8',
+        'competence'    => 'required|min:8',
+        'forms'         => 'required|min:8',
+        'literature'    => 'required|min:8',
+        'content'       => 'required|min:8',
     ];
     /**
      * Display a listing of the resource.
@@ -58,7 +64,13 @@ class CourseController extends Controller
             'program_id'    => 'required',
             'title'         => 'required',
             'content'       => 'required',
-            'points'        => 'required'
+            'points'        => 'required',
+            'goal'          => 'required',
+            'knowledge'     => 'required',
+            'skills'        => 'required',
+            'competence'    => 'required',
+            'forms'         => 'required',
+            'literature'    => 'required',
         ]);
 
         $validData['user_id'] = Auth::id();
