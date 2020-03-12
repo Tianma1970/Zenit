@@ -12,14 +12,26 @@ class Course extends Model
         'title',
         'content',
         'points',
-        'program_id'
+        'program_id',
+        'goal',
+        'knowledge',
+        'skills',
+        'competence',
+        'forms',
+        'literature'
     ];
 
     protected $attributes = [
         'title'         => NULL,
         'content'       => NULL,
         'points'        => NULL,
-        'program_id'    => NULL
+        'program_id'    => NULL,
+        'goal'          => NULL,
+        'knowledge'     => NULL,
+        'skills'        => NULL,
+        'competence'    => NULL,
+        'forms'         => NULL,
+        'literature'    => NULL
     ];
 
     public function user()
