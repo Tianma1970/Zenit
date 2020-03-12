@@ -18,7 +18,8 @@
 
                 <div id="course{{ $course->id }}" class="collapse" aria-labelledby="courseheading{{ $course->id }}" data-parent="#accordionExample">
                     <div class="card-body">
-                        {{ $course->content }}<br>
+                        <a href="/courses/{{$course->id}}">{{ $course->title }}</a><br>
+                        {{ $course->knowledge }}<br>
                         @if(Auth::user()->type === 'admin')
                         <form method="post" action="/courses/{{ $course->id }}">
                             @method("DELETE")
