@@ -23,7 +23,7 @@
             <a href="/home" class="btn btn-info">Back</a>
 
             @if(Auth::user()->type === 'member')
-                <a href="#" class="btn btn-success">Ladda upp ditt projekt</a>
+                <a href="/projects/" class="btn btn-success">Ladda upp ditt projekt</a>
             @endif
         </div>
     </div>
