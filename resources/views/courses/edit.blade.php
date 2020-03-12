@@ -51,7 +51,8 @@
                                     <!--Submit-->
                                     <div class="form-group">
                                         <input type="submit" value="Edit Course"
-                                        class="btn btn-success">
+                                        class="btn btn-success">&nbsp;
+                                        <a href="/home" class="btn btn-info">Back</a>
                                     </div>
 
                                 </form>
