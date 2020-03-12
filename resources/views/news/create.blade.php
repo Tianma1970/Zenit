@@ -16,11 +16,19 @@
             </div>
 
             <div class="form-group">
-                <label for="content">Content</label>
-                <input type="text-area" id="content"
-                  name="content" value="{{ old('content') }}"
-                  placeholder="Content"
+                <label for="author">Author</label>
+                <input type="author" id="author"
+                  name="author" value="{{ old('author') }}"
+                  placeholder="author"
                   class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" placeholder="Content"
+                  name="content" value="{{ old('content') }}"
+                  class="form-control">
+                </textarea>
             </div>
 
             <!--Submit-->

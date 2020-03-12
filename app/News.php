@@ -10,13 +10,15 @@ class News extends Model
     protected $fillable = [
         'title',
         'content',
-        'user_id'
+        'user_id',
+        'author'
     ];
 
     protected $attributes = [
         'title'     => NULL,
         'content'   => NULL,
-        'user_id'   => NULL
+        'user_id'   => NULL,
+        'author'    => NULL
     ];
 
     public function user()

@@ -20,7 +20,8 @@ class NewsController extends Controller
 
     protected $validationRules = [
         'title'     => 'required:min:3',
-        'content'   => 'required:min:8'
+        'content'   => 'required:min:8',
+        'author'    => 'required:min:3'
     ];
 
     public function index()
@@ -53,7 +54,8 @@ class NewsController extends Controller
 
         $validData = $request->validate([
             'title'     => 'required',
-            'content'   => 'required'
+            'content'   => 'required',
+            'author'    => 'required'
         ]);
 
         $validData['user_id'] = Auth::id();
@@ -102,6 +104,7 @@ class NewsController extends Controller
         $validData = $request->validate($this->validationRules);
         $news->title = $validData['title'];
         $news->content = $validData['content'];
+        $news->author = $validData['author'];
 
         $news->save();
         return redirect('/home')->with('status', 'News updated successfully');

@@ -17,6 +17,14 @@
             </div>
 
             <div class="form-group">
+                <label for="author">Author</label>
+                <input type="author" id="author"
+                  name="author" required value="{{ old('author') ? old('author') : $news->author }}"
+                  placeholder="Author"
+                  class="form-control">
+            </div>
+
+            <div class="form-group">
                 <label for="content">Content</label>
                 <input type="text-area" id="content"
                   name="content" required value="{{ old('content') ? old('content') : $news->content }}"
