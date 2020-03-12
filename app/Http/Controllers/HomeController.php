@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\News;
 use App\Course;
 use App\Program;
+use App\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
