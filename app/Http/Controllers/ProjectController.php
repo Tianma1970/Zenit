@@ -44,7 +44,18 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validData = $request->validate([
+            'course_id' => 'required',
+            'content'   => 'required'
+
+            ]);
+
+
+        $validData['user_id'] = Auth::id();
+        $project = project::create($validData);
+
+        return redirect('/home')->with('status', 'Du har lämnat in ditt projekt');
     }
 
     /**
