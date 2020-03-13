@@ -19,6 +19,7 @@ class CourseController extends Controller
         'goal'          => 'required|min:8',
         'knowledge'     => 'required|min:8',
         'skills'        => 'required|min:8',
+        'points'        => 'required|min:2',
         'competence'    => 'required|min:8',
         'forms'         => 'required|min:8',
         'literature'    => 'required|min:8',
