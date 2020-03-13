@@ -34,6 +34,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
     Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
 
     Route::get('/projects', 'ProjectController@create');
+    Route::post('/projects/store', 'ProjectController@store');
 });
 
 /**
