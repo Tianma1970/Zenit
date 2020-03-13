@@ -10,19 +10,19 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = [
-        'title',
         'content',
-        'user_id'
+        'user_id',
+        'course_id'
     ];
 
     protected $attributes = [
 
-        'title'     => NULL,
         'content'   => NULL,
-        'user_id'   => NULL
+        'user_id'   => NULL,
+        'course_id' => NULL
     ];
-    public function program()
+    public function courses()
     {
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(Project::class);
     }
 }
