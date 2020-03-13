@@ -6,6 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Add a course</div>
+                @include('partials/error')
                     <div class="card-body">
                         <div class="jumbotron">
                             <div class="card-title">
@@ -73,7 +74,7 @@
                                         <div class="form-group">
                                             <label for="knowledge">Knowledge</label>
                                             <textarea id="knowledge" name="knowledge"
-                                             class="form-control" placeholder="Kunskaper">{{ old          ('knowledge') }}</textarea>
+                                             class="form-control" placeholder="Kunskaper (optional)">{{ old          ('knowledge') }}</textarea>
                                         </div>
 
                                     <!--Skills-->
@@ -87,14 +88,14 @@
                                         <div class="form-group">
                                             <label for="competence">Competence</label>
                                             <textarea id="competence" name="competence"
-                                             class="form-control" placeholder="Kompetenser">{{ old      ('competence') }}</textarea>
+                                             class="form-control" placeholder="Kompetenser (optional)">{{ old      ('competence') }}</textarea>
                                         </div>
 
                                     <!--Forms-->
                                         <div class="form-group">
                                             <label for="forms">Forms</label>
                                             <textarea id="forms" name="forms"
-                                             class="form-control" placeholder="Betygskriterier">{{ old('forms') }}</textarea>
+                                             class="form-control" placeholder="Betygskriterier (optional)">{{ old('forms') }}</textarea>
                                         </div>
 
                                     <!Literature-->
