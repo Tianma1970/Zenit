@@ -31,7 +31,7 @@
                         <hr>
                         <small>{{ $course->points }} YH poäng</small>
                         @if(Auth::user()->type === 'member')
-                            <a href="projects/" class="btn btn-info">Ladda upp dit projekt</a>
+                            <a href="projects/create" class="btn btn-info">Ladda upp dit projekt</a>
                         @endif
                     </div>
                 </div>
