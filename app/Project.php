@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Course;
 use App\Program;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
