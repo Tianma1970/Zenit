@@ -86,7 +86,9 @@
                             @endif
                         @else
 
+                            @if(Auth::user()->user_image)
                             <img src="/images/{{Auth::user()->user_image}}" class="mt-1" width='30' height='30'>
+                            @endif
 
                             <li class="nav-item dropdown">
 
