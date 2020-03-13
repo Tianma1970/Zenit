@@ -121,9 +121,17 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
+
         $validData = $request->validate($this->validationRules);
         $course->title = $validData['title'];
         $course->content = $validData['content'];
+        $course->points = $validData['points'];
+        $course->goal = $validData['goal'];
+        $course->knowledge = $validData['knowledge'];
+        $course->skills = $validData['skills'];
+        $course->competence = $validData['competence'];
+        $course->forms = $validData['forms'];
+        $course->literature = $validData['literature'];
         $course->save();
 
         return redirect('home')->with('status', 'Course edited successfully');
