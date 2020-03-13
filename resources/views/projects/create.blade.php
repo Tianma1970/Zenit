@@ -10,17 +10,34 @@
                     <div class="card-body">
                         {{-- @include('partials/status') --}}
                         <div class="jumbotron">
+                            <form method='post' action='/projects'>
+                                @csrf
+                                <!-- Courses -->
+                                <div class="form-group">
+                                    <label for="course_id">Course</label>
+                                    <select id="course_id" name="course_id" class="form-control">
+                                        <option value="">Please select a course</option>
+                                        @foreach($courses as $course)
+                                        <option value="{{ $course->id }}"
+                                        @if($course->id == old('course_id'))
+                                        selected
+                                        @endif
+                                        >{{ $course->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                            <!-- Message -->
-                            @if(Session::has('message'))
-                            <p >{{ Session::get('message') }}</p>
-                            @endif
+                                <!--Project Content-->
+                                <div class="form-group">
+                                <label for="content">Content</label>
+                                <textarea id="content" name="content" class="form-control" placeholder="Content" cols="75"></textarea>
+                                </div>
 
-                            <!-- Form -->
-                            <form method='post' action='/store' enctype='multipart/form-data' >
-                            {{ csrf_field() }}
-                            <input type='file' name='image' >
-                            <input type='submit' name='submit' value='Upload File'>
+                                <!--Submit-->
+                                <div>
+                                    <input type="submit" value="Lämna in" class="btn btn-success">
+                                </div>
+
                             </form>
                         </div>
                     </div>
