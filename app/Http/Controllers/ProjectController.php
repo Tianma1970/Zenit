@@ -26,7 +26,14 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::guest()){
+            abort(403);
+        }
+
+        $courses = Course::orderBy('title')->get();
+        return view('/projects/create', [
+            'courses'    => $courses
+        ]);
     }
 
     /**
