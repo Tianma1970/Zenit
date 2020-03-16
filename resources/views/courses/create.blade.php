@@ -31,7 +31,7 @@
                                         </option>
                                         @endforeach
                                     </select>
-                                    </div>
+                                </div>
 
                                     <!--Title-->
                                     <div class="row">
