@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Program;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -64,11 +65,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $programs = Program::orderBy('name')->get();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'type'     => $data['type'],
+            'programs' =>$programs
+        ]);
+    }
+
+    protected function getRegister()
+    {
+        $programs = Program::orderBy('name')->get();
+        return view('/auth/register',[
+            'programs'  =>$programs
         ]);
     }
 }

@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('news/show', 'NewsController@show');
 
 
+
+
 /**
  * Routes for member
  *  */
@@ -53,6 +55,8 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::get('/comments/create', 'CommentController@create');
     Route::get('comments/show', 'CommentController@show');
     Route::post('comments/store', 'CommentController@store');
+
+    //Route::get('/register', 'Auth/RegisterController@getRegister');
 });
 
 /**

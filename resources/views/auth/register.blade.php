@@ -71,6 +71,24 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="program_id"class="col-md-4 text-md-right control-label">Program</label>
+                            <div class="col-md-6">
+                                <select id="program_id" name="program_id" class="form-control">
+                                <option value="">Please select a program</option>
+                                {{-- @foreach($programs as $program)
+                                <option value="{{ $program->id }}"
+                                    @if($program->id == old('program_id'))
+                                    selected
+                                    @endif
+                                    >
+                                    {{ $program->name }}
+                                </option>
+                                @endforeach --}}
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
