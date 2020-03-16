@@ -36,9 +36,7 @@ class SettingController extends Controller
 
         $settings->save();
 
-        return redirect('/home', [
-            'settings'  => $settings
-        ])->with('status', 'Site Logo uploaded successfully');
+        return redirect('/home')->with('status', 'Site Logo uploaded successfully');
 
     }
 }
