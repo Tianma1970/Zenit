@@ -57,6 +57,9 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::post('comments/store', 'CommentController@store');
 
     //Route::get('/register', 'Auth/RegisterController@getRegister');
+
+    Route::get('uploadLogo', 'SettingController@index');
+    Route::post('/uploadLogo', 'SettingController@uploadLogo');
 });
 
 /**

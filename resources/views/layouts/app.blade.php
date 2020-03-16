@@ -1,3 +1,4 @@
+@inject('settings', 'App\Services\SettingsService')
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -26,18 +27,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <small>The logo will be here</small>
-                {{--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>  --}}
+
+                <a href="/home"><img src="/uploads/{{ $settings->get()->site_logo }}" class="mt-1" width='60' height='30'></a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home">Zenit</a>
-                        </li>
 
                     @if(Auth::user())
                         @if(Auth::user()->type === 'member')
@@ -66,6 +61,7 @@
                         <a class="dropdown-item" href="/courses/create">create a course</a>
                         <a class="dropdown-item" href="/news/create">add some news</a>
                         </li>
+
 
                         @endif
                     @endif
@@ -101,6 +97,11 @@
                                     <a class="dropdown-item" href="/upload">
                                         {{__('Upload your profile picture')}}
                                     </a>
+                                    @if(Auth::user()->type === 'admin')
+
+                                    <a class="dropdown-item" href="uploadLogo">add site logo</a>
+
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
