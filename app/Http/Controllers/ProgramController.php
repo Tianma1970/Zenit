@@ -39,7 +39,17 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validData = $request->validate([
+            'name'          => 'required',
+            'year'          => 'required'
+            ]);
+            //dd('store');
+
+        $validData['user_id'] = Auth::id();
+        $programs = Program::create($validData);
+
+        return redirect('/home')->with('status', 'Program created successfully');
     }
 
     /**
