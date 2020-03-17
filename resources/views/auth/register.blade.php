@@ -76,7 +76,7 @@
                             <div class="col-md-6">
                                 <select id="program_id" name="program_id" class="form-control">
                                 <option value="">Please select a program</option>
-                                {{-- @foreach($programs as $program)
+                                @foreach($programs as $program)
                                 <option value="{{ $program->id }}"
                                     @if($program->id == old('program_id'))
                                     selected
@@ -84,7 +84,7 @@
                                     >
                                     {{ $program->name }}
                                 </option>
-                                @endforeach --}}
+                                @endforeach
                                 </select>
                             </div>
                         </div>
