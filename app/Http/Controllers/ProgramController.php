@@ -25,7 +25,10 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::guest()) {
+            abort(403);
+        }
+        return view('/programs/create');
     }
 
     /**
