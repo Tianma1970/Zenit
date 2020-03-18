@@ -58,6 +58,7 @@ class NewsController extends Controller
     {
 
         $validData = $request->validate([
+            'program_id' => 'required',
             'title'     => 'required',
             'content'   => 'required',
             'author'    => 'required'

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     protected $fillable = [
+        'program_id',
         'title',
         'content',
         'user_id',
@@ -15,6 +16,7 @@ class News extends Model
     ];
 
     protected $attributes = [
+        'program_id' => NULL,
         'title'     => NULL,
         'content'   => NULL,
         'user_id'   => NULL,
