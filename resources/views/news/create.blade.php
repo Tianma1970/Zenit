@@ -16,6 +16,21 @@
                                     @include('partials/error')
                                     <form method="POST" action="/news" class="col-6">
                                         @csrf
+                                    <div class="form-group">
+                                        <label for="program_id">Program</label>
+                                        <select id="program_id" name="program_id" class="form-control">
+                                        <option value="">Please select a program</option>
+                                        @foreach($programs as $program)
+                                        <option value="{{ $program->id }}"
+                                        @if($program->id == old('program_id'))
+                                        selected
+                                        @endif
+                                        >
+                                        {{ $program->name }}
+                                        </option>
+                                        @endforeach
+                                        </select>
+                                    </div>
                                         <div class="form-group">
                                             <label for="title">Titel</label>
                                             <input type="title" id="title"
