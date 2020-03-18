@@ -47,9 +47,9 @@
 
                 <div class="card-body">
                     @if(Auth::user()->type === 'member')
-                        @foreach($programs as $program)
-                            <h4>Your Program is  {{ $program->name }}</h4><br>
-                        @endforeach
+                        {{--  @foreach($programs as $program)  --}}
+                            <h4>Your Program is  {{ Auth::user()->program->name }}</h4><br>
+                        {{--  @endforeach  --}}
                     @endif
 
                     @if(Auth::user()->user_image)
