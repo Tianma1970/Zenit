@@ -41,7 +41,11 @@ class NewsController extends Controller
         {
             abort(403);
         }
-        return view('news/create');
+
+        $programs = Program::orderBy('name')->get();
+        return view('news/create', [
+            'programs'  => $programs
+        ]);
     }
 
     /**
