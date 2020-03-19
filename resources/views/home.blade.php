@@ -29,9 +29,9 @@
                             </form>
                         @endif
                         <hr>
-                        <small>{{ $course->points }} YH poäng</small>
+                        <small>{{ $course->points }} YH poäng</small><br>
                         @if(Auth::user()->type === 'member')
-                            <a href="projects/create" class="btn btn-info">Ladda upp dit projekt</a>
+                            <a href="projects/create" class="btn btn-info mt-3">Ladda upp dit projekt</a>
                         @endif
                     </div>
                 </div>
