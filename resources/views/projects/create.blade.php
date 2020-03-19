@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Lämna in ditt projekt</div>
                     <div class="card-body">
-                        {{-- @include('partials/status') --}}
+                        @include('partials/status')
                         <div class="jumbotron">
                             <form method='post' action='/projects'>
                                 @csrf
