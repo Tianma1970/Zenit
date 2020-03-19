@@ -17,7 +17,7 @@
                                     <label for="course_id">Course</label>
                                     <select id="course_id" name="course_id" class="form-control">
                                         <option value="">Please select a course</option>
-                                        @foreach($courses as $course)
+                                        @foreach(Auth::user()->program->courses as $course)
                                         <option value="{{ $course->id }}"
                                         @if($course->id == old('course_id'))
                                         selected
