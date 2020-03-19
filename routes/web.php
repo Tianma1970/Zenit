@@ -47,6 +47,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
 
     Route::post('/projects', 'ProjectController@store');
     Route::get('/projects/create', 'ProjectController@create');
+    Route::get('/middleware', 'ProjectController@show');
 });
 
 /**
