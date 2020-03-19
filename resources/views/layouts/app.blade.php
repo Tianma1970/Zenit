@@ -58,6 +58,7 @@
                             Add
                             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/programs/create">create a program</a>
                         <a class="dropdown-item" href="/courses/create">create a course</a>
                         <a class="dropdown-item" href="/news/create">add some news</a>
                         </li>
