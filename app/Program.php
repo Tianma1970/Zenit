@@ -31,8 +31,9 @@ class Program extends Model
         return $this->hasMany(Course::class);
     }
 
-    public function users()
+    public function news()
     {
-        return $this->hasMany(user::class);
+        return $this->hasMany(News::class);
     }
+
 }
