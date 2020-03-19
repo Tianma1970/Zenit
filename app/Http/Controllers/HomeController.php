@@ -31,12 +31,14 @@ class HomeController extends Controller
         $courses = Course::orderBy('title')->get();
         $news    = News::orderBy('title', 'asc')->limit(3)->get();
         $programs = Program::orderBy('name')->get();
+        $program = Program::orderBy('name')->get();
         $projects = Project::orderBy('content')->get();
 
         return view('home', [
             'courses'   => $courses,
             'news'      => $news,
             'programs'  => $programs,
+            'program'  => $program,
             'projects'   => $projects
         ]);
     }
