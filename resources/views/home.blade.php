@@ -7,7 +7,7 @@
         <div class="col-md-4">
             <div class="card-header">Courses</div>
             <div class="accordion mt-3" id="accordionExample">
-            @foreach($courses as $course)
+            @foreach(Auth::user()->program->courses  as $course)
             <div class="card">
                 <div class="card-header" id="courseheading{{ $course->id }}">
                     <h2 class="mb-0">
@@ -67,7 +67,7 @@
                 <div class="card-header">News</div>
                 <div class="card-body">
                     <ul>
-                        @foreach($news as $news)
+                        @foreach(Auth::user()->program->news as $news)
                         @if(Auth::user()->type === 'admin')
                         <li><h3><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h3>
                         @else
