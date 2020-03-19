@@ -72,15 +72,26 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'type'     => $data['type'],
-            'programs' =>$programs
+            'program_id' => $data['program_id']
+
         ]);
     }
 
-    protected function getRegister()
+    // protected function getRegister()
+    // {
+    //     $programs = Program::orderBy('name')->get();
+    //     return view('/auth/register',[
+    //         'programs'  => $programs
+    //     ]);
+    // }
+
+    public function showRegistrationForm()
     {
-        $programs = Program::orderBy('name')->get();
-        return view('/auth/register',[
-            'programs'  =>$programs
+        //dd('register');
+        $programs = Program::all();
+
+        return view('auth/register', [
+            'programs'  => $programs
         ]);
     }
 }
