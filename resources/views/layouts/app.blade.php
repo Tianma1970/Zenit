@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
 
-                <a href="/home"><img src="/uploads/{{ $settings->get()->site_logo }}" class="mt-1" width='60' height='30'></a>
+                <a href="/home"><img src="/uploads/{{ $settings->get()->site_logo }}" class="mt-1" width='130' height='30'></a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
