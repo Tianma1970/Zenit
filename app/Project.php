@@ -11,6 +11,7 @@ class Project extends Model
 {
     protected $fillable = [
         'content',
+        'title',
         'user_id',
         'course_id'
     ];
@@ -18,6 +19,7 @@ class Project extends Model
     protected $attributes = [
 
         'content'   => NULL,
+        'title'     => NULL,
         'user_id'   => NULL,
         'course_id' => NULL
     ];

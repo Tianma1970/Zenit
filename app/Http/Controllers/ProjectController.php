@@ -47,6 +47,7 @@ class ProjectController extends Controller
 
         $validData = $request->validate([
             'course_id' => 'required',
+            'title'     => 'required',
             'content'   => 'required'
 
             ]);
