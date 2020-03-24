@@ -64,7 +64,6 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::resource('/news', 'NewsController');
     Route::post('/update', 'NewsController@update');
     Route::get('/comments/create', 'CommentController@create');
-    Route::get('comments/show', 'CommentController@show');
     Route::post('comments/store', 'CommentController@store');
 
     //Route::get('/register', 'Auth/RegisterController@getRegister');
@@ -85,5 +84,6 @@ Route::middleware(['auth'])->group(function(){
     //uploading profile picture
     Route::get('/upload', 'ProfilePictureController@index');
     Route::post('/store', 'ProfilePictureController@store');
+    Route::get('comments/show', 'CommentController@show');
 });
 
