@@ -25,8 +25,11 @@ class CommentController extends Controller
      */
     public function create()
     {
+        $projects = Project::orderBy('content')->get();
 
-        return view('comments/create');
+        return view('comments/create', [
+            'projects'  => $projects
+        ]);
     }
 
     /**
