@@ -8,25 +8,25 @@
         {{--  @include('partials/validation_errors')
         @include('partials/status')  --}}
 
-        <form method="POST" action="/comments" class="col-6">
+        <form method="POST" action="/comments/store" class="col-6">
             @csrf
 
             <!--Content-->
 
             <div class="form-group">
-                <label for="post_id">Post</label>
-                <select id="post_id" name="post_id"
+                <label for="post_id">Project</label>
+                <select id="project_id" name="project_id"
                 class="form-control">
-                {{--  <option value="">Select the post you want to comment</option>
-                @foreach($posts as $post)
-                    <option value="{{ $post->id }}"
-                        @if($post->id == old('post_id'))
+                <option value="">Select the project you want to comment</option>
+                @foreach($projects as $project)
+                    <option value="{{ $project->id }}"
+                        @if($project->id == old('project_id'))
                             selected
                             @endif
                             >
-                                {{ $post->title }}
+                                {{ $project->title }}
                         </option>
-                @endforeach  --}}
+                @endforeach
 
 
             </select>
