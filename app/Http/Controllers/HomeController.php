@@ -45,14 +45,19 @@ class HomeController extends Controller
 
     public function member(Request $req)
     {
+        $projects = Project::orderBy('title')->get();
 
-        // $users = DB::table('users')->get();
-
-        return view('middleware')->withMessage("Member");
+        return view('middleware', [
+            'projects'  => $projects
+        ])->withMessage("Member");
     }
 
     public function admin(Request $req)
     {
-        return view('middleware')->withMessage("Admin");
+        $projects = Project::orderBy('title')->get();
+
+        return view('middleware', [
+            'projects'  => $projects
+        ])->withMessage("Admin");
     }
 }
