@@ -27,6 +27,12 @@
                                     </select>
                                 </div>
 
+                                <!--Project Title-->
+                                <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="textarea" name="title" class="form-control" placeholder="title" cols="75">
+                                </div>
+
                                 <!--Project Content-->
                                 <div class="form-group">
                                 <label for="content">Content</label>
