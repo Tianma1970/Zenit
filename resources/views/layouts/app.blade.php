@@ -98,6 +98,11 @@
                                     <a class="dropdown-item" href="/upload">
                                         {{__('Upload your profile picture')}}
                                     </a>
+                                    @if(Auth::user()->type === 'member')
+                                    <a class="dropdown-item" href="/motto/create">
+                                        {{__('Create your Motto')}}
+                                    </a>
+                                    @endif
                                     @if(Auth::user()->type === 'admin')
 
                                     <a class="dropdown-item" href="uploadLogo">add site logo</a>

@@ -57,6 +57,11 @@
                             <img src="/images/{{Auth::user()->user_image}}"width='150' height='150'>
                         </div>
                     @endif
+                    @if(Auth::user()->motto)
+                    <div class="mt-3 text-center">
+                        <p>Your Motto is: {{ Auth::user()->motto }}</p>
+                    </div>
+                    @endif
                     Member Page: <a href="{{ url('/')}}/memberOnlyPage">Member</a><br>
                     Admin Page: <a href="{{ url('/')}}/adminOnlyPage">Admin</a>
                 </div>
