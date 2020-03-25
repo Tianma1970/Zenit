@@ -21,9 +21,14 @@ class Program extends Model
         'user_id'   => NULL
     ];
 
+    // public function projects()
+    // {
+    //     return $this->hasMany(Project::class);
+    // }
+
     public function projects()
     {
-        return $this->hasMany(Project::class);
+        return $this->hasManyThrough(Project::class, Course::class);
     }
 
     public function courses()
