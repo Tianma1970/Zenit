@@ -27,6 +27,12 @@
                                     </select>
                                 </div>
 
+                                <!--Project Author-->
+                                <div class="form-group">
+                                <label for="title">Author</label>
+                                <input type="textarea" name="author" class="form-control" placeholder="author" cols="75">
+                                </div>
+
                                 <!--Project Title-->
                                 <div class="form-group">
                                 <label for="title">Title</label>
