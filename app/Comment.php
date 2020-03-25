@@ -17,8 +17,9 @@ class Comment extends Model
 
     protected $attributes = [
         'user_id'   => Null,
-        'title'     => Null,
-        'content'   => Null
+        'author'     => Null,
+        'content'   => Null,
+        'status'    => NULL
     ];
 
     public function project()
