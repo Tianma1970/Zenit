@@ -17,7 +17,8 @@
                                     <div class="title m-b-md">
                                         @foreach($projects as $project)
                                             @if(Auth::user()->type === 'admin')
-                                                <h1>{{ $project->title }}</h1>
+                                                <h3>{{ $project->title }}</h3>
+                                                <p>Author: {{ $project->author }}</p>
                                                 {{ $project->content}}<br>
                                                 @if(Auth::user()->projects->count() > 1)
                                                 <hr>
