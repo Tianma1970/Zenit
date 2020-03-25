@@ -47,7 +47,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'content'   => 'required',
+            'author'    => 'required',
+            'status'    => 'required'
+        ]);
+
+        $validData['user_id'] = Auth::id();
+        $comment = Comment::create($validData);
+
+        return redirect('/home')->with('status', 'Comment created successfully');
     }
 
     /**
