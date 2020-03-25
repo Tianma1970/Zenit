@@ -15,7 +15,7 @@
                             <div class="jumbotron">
                                 <div class="card-title">
                                     <div class="title m-b-md">
-                                        @foreach($projects as $project)
+                                        @foreach(Auth::user()->program->projects as $project)
                                             @if(Auth::user()->type === 'admin')
                                                 <h3>{{ $project->title }}</h3>
                                                 <p>Author: {{ $project->author }}</p>
