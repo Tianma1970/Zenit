@@ -27,7 +27,7 @@
                                 <select id="project_id" name="project_id"
                                 class="form-control">
                                 <option value="">Select the project you want to comment</option>
-                                @foreach($projects as $project)
+                                @foreach(Auth::user()->program->projects as $project)
                                 <option value="{{ $project->id }}"
                                 @if($project->id == old('project_id'))
                                 selected
