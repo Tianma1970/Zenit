@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Program;
+use App\Course;
 use App\Project;
 use App\Comment;
 use Illuminate\Http\Request;
