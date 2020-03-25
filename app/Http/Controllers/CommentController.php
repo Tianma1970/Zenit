@@ -48,6 +48,7 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $validData = $request->validate([
+            'project_id' => 'required',
             'content'   => 'required',
             'author'    => 'required',
             'status'    => 'required'
