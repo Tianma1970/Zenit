@@ -8,7 +8,7 @@
                     <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
                     @else
                     <div class="card-header text-center">
-                        Incomming projects
+                        Incomming projects for {{ Auth::user()->program->name }}
                     </div>
                     @endif
                         <div class="card-body">
