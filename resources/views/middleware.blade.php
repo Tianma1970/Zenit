@@ -30,6 +30,19 @@
                                         @endif
                                         @endforeach
 
+                                        @if(Auth::user()->type === 'member')
+                                        @foreach($comments as $comment)
+                                        <div class="card text-white bg-success mb-3">
+                                        <div class="card-header">{{$comment->author}} commented {{$comment->project->title }}</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"></h5>
+                                            <p class="card-text">{{ $comment->content}}</p>
+                                            <small>comment created at: <i>{{ $comment->updated_at }}</i></small>
+                                        </div>
+                                        </div>
+                                        @endforeach
+                                        @endif
+
 
                                     </div>
                                 </div>
