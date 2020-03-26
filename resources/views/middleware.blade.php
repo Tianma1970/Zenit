@@ -20,6 +20,7 @@
                                                 <h3>{{ $project->title }}</h3>
                                                 <p>Author: {{ $project->author }}</p>
                                                 {{ $project->content}}<br>
+                                                <small>Project created at <i>{{ $project->updated_at }}</i></small><br>
                                                 @if(Auth::user()->projects->count() > 1)
                                                 <hr>
                                                 @endif
