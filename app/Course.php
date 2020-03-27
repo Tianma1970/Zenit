@@ -3,6 +3,8 @@
 namespace App;
 
 use App\User;
+use App\Project;
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
