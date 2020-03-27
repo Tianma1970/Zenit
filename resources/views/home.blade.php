@@ -42,7 +42,7 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-header">Welcome: {{ Auth::user()->name }},
-                    you are logged in as a <strong>{{ strtoupper(Auth::user()->type )}}</strong>!<br>
+                    you are logged in as a <strong>{{ strtoupper(Auth::user()->type )}}</strong>! for {{ Auth::user()->program->name }}<br>
                 </div>
 
                 <div class="card-body">
@@ -74,7 +74,7 @@
                     <ul>
                         @foreach(Auth::user()->program->news as $news)
                         @if(Auth::user()->type === 'admin')
-                        <li><h3><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h3>
+                        <li><h5><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h5>
                         @else
                         <li><h3>{{ $news->title }}</h3>
                         @endif
