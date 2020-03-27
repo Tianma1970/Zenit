@@ -28,7 +28,7 @@ class Program extends Model
 
     public function projects()
     {
-        return $this->hasManyThrough(Project::class, Course::class);
+        return $this->hasManyThrough(Project::class, Course::class, 'program_id', 'course_id', 'id', 'id');
     }
 
     public function courses()
