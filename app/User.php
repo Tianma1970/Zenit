@@ -50,5 +50,15 @@ class User extends Authenticatable
         return $this->belongsTo(Program::class);
     }
 
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function comments()
+    {
+        return $this->belongsTo(Comment::class);
+    }
+
 
 }
