@@ -48,10 +48,12 @@ class HomeController extends Controller
     {
         $projects = Project::orderBy('title')->get();
         $comments = Comment::orderBy('content')->get();
+        $courses = Course::orderBy('title')->get();
 
         return view('middleware', [
             'projects'  => $projects,
-            'comments'  => $comments
+            'comments'  => $comments,
+            'courses'   => $courses
         ])->withMessage("Member");
     }
 
