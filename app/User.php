@@ -4,6 +4,7 @@ namespace App;
 
 use App\Program;
 use App\Course;
+use App\Comment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
