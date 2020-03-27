@@ -50,4 +50,9 @@ class Course extends Model
     {
         return $this->belongsTo(Program::class);
     }
+
+    public function comments()
+    {
+        return $this->hasManyThrough(Comment::class, Project::class, 'course_id', 'project_id', 'id', 'id');
+    }
 }
