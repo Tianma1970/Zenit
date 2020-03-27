@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Add a comment</div>
+                <div class="card-header text-center">Add a comment to projects of {{ Auth::user()->program->name }}</div>
                 @include('partials/error')
                     <div class="card-body">
                         <div class="jumbotron">
