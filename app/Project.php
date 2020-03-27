@@ -4,6 +4,7 @@ namespace App;
 
 use App\Project;
 use App\Course;
+use App\Comment;
 use App\Program;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
