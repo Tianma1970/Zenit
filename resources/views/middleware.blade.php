@@ -25,22 +25,20 @@
                                                 <hr>
                                                 @endif
                                                 @if(Auth::user()->type === 'admin')
-                                                <a href="/comments/create" class="btn btn-info">create a comment</a>
+                                                <a href="/comments/{{$project->id}}/create" class="btn btn-info">create a comment</a>
                                             @endif
                                         @endif
                                         @endforeach
 
                                         @if(Auth::user()->type === 'member')
-                                        @foreach($comments as $comment)
+
+                                        @foreach(Auth::user()->projects as $project)
                                         <div class="card text-white bg-success mb-3">
-                                        <div class="card-header">{{$comment->author}} commented {{$comment->project->title }}</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title"></h5>
-                                            <p class="card-text">{{ $comment->content}}</p>
-                                            <small>comment created at: <i>{{ $comment->updated_at }}</i></small>
-                                        </div>
+                                        <div class="card-header">{{$project->comments}} </div>
+
                                         </div>
                                         @endforeach
+
                                         @endif
 
 
