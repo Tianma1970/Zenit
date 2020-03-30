@@ -17,7 +17,7 @@
                                             <li>{{ $project->title }}<br>
                                                 {{ $project->content }}<br>
 
-                                                <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small>
+                                                <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><hr>
                                             </li>
                                         @endforeach
                                         </ul>
@@ -32,7 +32,7 @@
                                             <li>
                                                 {{$project->title}}<br>
                                                 {{$project->comments}}
-                                            </li>
+                                            </li><hr>
 
                                             @endforeach
                                         </ul>
