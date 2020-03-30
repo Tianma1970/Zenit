@@ -16,7 +16,8 @@ class Project extends Model
         'title',
         'user_id',
         'course_id',
-        'author'
+        'author',
+        'comments'
     ];
 
     protected $attributes = [
@@ -24,7 +25,8 @@ class Project extends Model
         'content'   => NULL,
         'title'     => NULL,
         'user_id'   => NULL,
-        'course_id' => NULL
+        'course_id' => NULL,
+        'comments'  => NULL
     ];
     public function courses()
     {
