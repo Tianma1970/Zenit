@@ -1,16 +1,40 @@
 @extends('layouts/app')
 
-@section('content')<div class="container">
+@section('content')
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    @if(Auth::user()->type === 'member')
-                        <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
+            <div class="col-10">
+                @if(Auth::user()->type === 'member')
+
+                <div class ="card-body">
+                    <div class="container">
+                        <div class="card">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
+                                        <ul>
+                                        @foreach(Auth::user()->projects as $project)
+                                            <li>{{ $project->title }}<br>
+                                                {{ $project->content }}<br>
+                                                <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small>
+                                            </li>
+                                        @endforeach
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="card-header text-center">
+                                            Comments for {{Auth::user()->name }} Projects
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     @else
                     <div class="card-header text-center">
                         Incomming projects for {{ Auth::user()->program->name }}
                     </div>
-                    @endif
+
                         <div class="card-body">
                             <div class="jumbotron">
                                 <div class="card-title">
@@ -34,8 +58,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
+    </div>
 @endsection
