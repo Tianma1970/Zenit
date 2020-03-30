@@ -16,6 +16,7 @@
                                         @foreach(Auth::user()->projects as $project)
                                             <li>{{ $project->title }}<br>
                                                 {{ $project->content }}<br>
+
                                                 <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small>
                                             </li>
                                         @endforeach
@@ -26,6 +27,15 @@
                                         <div class="card-header text-center">
                                             Comments for {{Auth::user()->name }} Projects
                                         </div>
+                                        <ul>
+                                            @foreach(Auth::user()->projects as $project)
+                                            <li>
+                                                {{$project->title}}<br>
+                                                {{$project->comments}}
+                                            </li>
+
+                                            @endforeach
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
