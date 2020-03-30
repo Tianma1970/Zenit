@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="card">
                     @if(Auth::user()->type === 'member')
-                    <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
+                        <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
                     @else
                     <div class="card-header text-center">
                         Incomming projects for {{ Auth::user()->program->name }}
@@ -29,18 +29,6 @@
                                             @endif
                                         @endif
                                         @endforeach
-
-                                        @if(Auth::user()->type === 'member')
-
-                                        @foreach(Auth::user()->projects as $project)
-                                        <div class="card text-white bg-success mb-3">
-                                        <div class="card-header">{{$project->comments}} </div>
-
-                                        </div>
-                                        @endforeach
-
-                                        @endif
-
 
                                     </div>
                                 </div>
