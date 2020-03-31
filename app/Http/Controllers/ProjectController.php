@@ -98,9 +98,20 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function storeComment(Request $request, Project $project)
     {
-        //
+
+        $validData = $request->validate([
+            'project_id'    => 'required',
+            'comments'      => 'required'
+        ]);
+
+
+        $project = Project::find($request->project_id);
+        $project->comments = $request->comments;
+        $project->save();
+
+        return redirect('home')->with('status', 'Comment created successfully');
     }
 
     /**
