@@ -1,46 +1,54 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-10">
-                @if(Auth::user()->type === 'member')
 
-                <div class ="card-body">
-                    <div class="container">
-                        <div class="card">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="card-header text-center"> {{Auth::user()->name }}s Projects</div>
-                                        <ul>
-                                        @foreach(Auth::user()->projects as $project)
-                                            <li>{{ $project->title }}<br>
-                                                {{ $project->content }}<br>
-
-                                                <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><hr>
-                                            </li>
-                                        @endforeach
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <div class="card-header text-center">
-                                            Comments for {{Auth::user()->name }} Projects
-                                        </div>
-                                        <ul>
-                                            @foreach(Auth::user()->projects as $project)
-                                            <li>
-                                                {{$project->title}}<br>
-                                                {{$project->comments}}<hr>
-                                            </li>
-
-                                            @endforeach
-                                        </ul>
-                                    </div>
+@if(Auth::user()->type === 'member')
+<div class="container">
+    <div class="row">
+       <div class="col-6">
+           <div class="card">
+               <div class="card-header text-center">
+                   {{ Auth::user()->name }}s Projects
+                </div>
+               <div class="card-body">
+                           <ul>
+                                @foreach(Auth::user()->projects as $project)
+                               <div class="card-text mt-3">
+                                   <li>
+                                       {{ $project->title }}<br>
+                                       {{ $project->content }}<br>
+                                       <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><hr>
+                                    </li>
                                 </div>
-                            </div>
-                        </div>
-                    @else
+                           @endforeach
+                           </ul>
+               </div>
+           </div>
+       </div>
+
+
+       <div class="col-6">
+           <div class="card">
+               <div class="card-header text-center">
+                               Comments for {{Auth::user()->name }}s Projects
+               </div>
+               <div class="card-body">
+                   <div class="card-text">
+                        <ul>
+                        @foreach(Auth::user()->projects as $project)
+                            <li>
+                                {{$project->title}}<br>
+                                {{$project->comments}}<hr>
+                            </li>
+                        @endforeach
+                        </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+                        @else
                     <div class="card-header text-center">
                         Incomming projects for {{ Auth::user()->program->name }}
                     </div>
