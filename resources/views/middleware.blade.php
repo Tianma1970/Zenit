@@ -31,8 +31,8 @@
                                             @foreach(Auth::user()->projects as $project)
                                             <li>
                                                 {{$project->title}}<br>
-                                                {{$project->comments}}
-                                            </li><hr>
+                                                {{$project->comments}}<hr>
+                                            </li>
 
                                             @endforeach
                                         </ul>
