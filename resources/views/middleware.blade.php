@@ -63,11 +63,12 @@
                                                 <p>Author: {{ $project->author }}</p>
                                                 {{ $project->content}}<br>
                                                 <small>Project created at <i>{{ $project->updated_at }}</i></small><br>
+                                                <input type="checkbox" value= 1 >completed<br>
                                                 @if(Auth::user()->projects->count() > 1)
                                                 <hr>
                                                 @endif
                                                 @if(Auth::user()->type === 'admin')
-                                                <a href="/projects/comment" class="btn btn-info">create a comment</a>
+                                                <a href="/projects/comment" class="btn btn-info mt-3">create a comment</a>
                                             @endif
                                         @endif
                                         @endforeach
