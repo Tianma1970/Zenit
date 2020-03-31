@@ -17,7 +17,8 @@ class Project extends Model
         'user_id',
         'course_id',
         'author',
-        'comments'
+        'comments',
+        'completed'
     ];
 
     protected $attributes = [
