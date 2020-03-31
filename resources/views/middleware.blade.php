@@ -70,7 +70,15 @@
                                                 <p>Author: {{ $project->author }}</p>
                                                 {{ $project->content}}<br>
                                                 <small>Project created at <i>{{ $project->updated_at }}</i></small><br>
-                                                <input type="checkbox" value= 1 >completed<br>
+                                                <form method="POST" action="/project/{{$project->id}}/check">
+                                                    @csrf
+                                                    <input type="checkbox" name="completed" value="1" onClick="this.form.submit();"
+                                                    @if($project->completed)
+                                                        checked
+                                                    @endif
+                                                >&nbsp;checked
+                                                </form>
+
                                                 @if(Auth::user()->projects->count() > 1)
                                                 <hr>
                                                 @endif
