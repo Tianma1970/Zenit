@@ -39,9 +39,9 @@
                         @foreach(Auth::user()->projects as $project)
                         @if($project->comments)
                         @if($project->completed === 0)
-                        <div class="card text-white bg-danger">
+                        <div class="card text-white bg-danger mt-3">
                         @else
-                        <div class="card text-white bg-success"
+                        <div class="card text-white bg-success mt-3"
                         @endif
                             <li>
                                 {{$project->title}}<br>
@@ -78,7 +78,7 @@
                                                     @if($project->completed)
                                                         checked
                                                     @endif
-                                                >&nbsp;checked
+                                                >&nbsp;completed?
                                                 </form>
 
                                                 @if(Auth::user()->projects->count() > 1)
