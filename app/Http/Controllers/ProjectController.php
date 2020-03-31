@@ -68,7 +68,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //dd('show');
+
         $projects = Project::orderBy('content')->get();
 
         return view('/middleware', [
