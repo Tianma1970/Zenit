@@ -11,17 +11,18 @@
                    {{ Auth::user()->name }}s Projects
                 </div>
                <div class="card-body">
+
                            <ul>
                                 @foreach(Auth::user()->projects as $project)
-                               <div class="card-text mt-3">
                                    <li>
                                        {{ $project->title }}<br>
                                        {{ $project->content }}<br>
                                        <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><hr>
                                     </li>
-                                </div>
+
                            @endforeach
                            </ul>
+
                </div>
            </div>
        </div>
