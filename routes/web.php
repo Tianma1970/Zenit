@@ -65,8 +65,9 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::get('/courses/{course}/edit', 'CourseController@edit');
     Route::resource('/news', 'NewsController');
     Route::post('/update', 'NewsController@update');
-    Route::get('/comments/create', 'CommentController@create');
-    Route::post('comments/store', 'CommentController@store');
+
+    Route::get('projects/comment', 'ProjectController@createComment');
+    Route::put('/project/', 'ProjectController@storeComment');
 
     //Route::get('/register', 'Auth/RegisterController@getRegister');
 
