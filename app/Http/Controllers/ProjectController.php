@@ -115,6 +115,16 @@ class ProjectController extends Controller
     }
 
     /**
+     * Choose if the project is completed
+     */
+    public function check(Request $request, Project $project)
+    {
+        $project->complete($request->has('completed'));
+
+        return view('middleware');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Project  $project
