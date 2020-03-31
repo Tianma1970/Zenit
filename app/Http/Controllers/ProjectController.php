@@ -82,9 +82,13 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function createComment(Project $project)
     {
-        //
+
+        $projects = Project::orderBy('title')->get();
+        return view('projects/comment', [
+            'project'  => $project
+        ]);
     }
 
     /**
