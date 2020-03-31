@@ -34,12 +34,18 @@
                                Comments for {{Auth::user()->name }}s Projects
                </div>
                <div class="card-body">
-                   <div class="card-text">
+                   <div class="card-text text-center">
                         <ul>
                         @foreach(Auth::user()->projects as $project)
+                        @if($project->completed === 0)
+                        <div class="card text-white bg-danger">
+                        @else
+                        <div class="card text-white bg-success"
+                        @endif
                             <li>
                                 {{$project->title}}<br>
                                 {{$project->comments}}<hr>
+                        </div>
                             </li>
                         @endforeach
                         </ul>
