@@ -68,6 +68,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
 
     Route::get('projects/comment', 'ProjectController@createComment');
     Route::put('/project/', 'ProjectController@storeComment');
+    Route::post('/project/{project}/check', 'ProjectController@check');
 
     //Route::get('/register', 'Auth/RegisterController@getRegister');
 
