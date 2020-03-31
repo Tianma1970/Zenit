@@ -37,4 +37,10 @@ class Project extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function complete($completed = true)
+    {
+        $this->completed =$completed;
+        $this->save();
+    }
 }
