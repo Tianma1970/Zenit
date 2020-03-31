@@ -26,7 +26,7 @@ class Project extends Model
         'title'     => NULL,
         'user_id'   => NULL,
         'course_id' => NULL,
-        'comments'  => NULL
+
     ];
     public function courses()
     {
