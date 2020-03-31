@@ -37,6 +37,7 @@
                    <div class="card-text text-center">
                         <ul>
                         @foreach(Auth::user()->projects as $project)
+                        @if($project->comments)
                         @if($project->completed === 0)
                         <div class="card text-white bg-danger">
                         @else
@@ -47,6 +48,7 @@
                                 {{$project->comments}}<hr>
                         </div>
                             </li>
+                        @endif
                         @endforeach
                         </ul>
                    </div>
