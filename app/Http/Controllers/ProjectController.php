@@ -37,6 +37,22 @@ class ProjectController extends Controller
     }
 
     /**
+     * Edit a newly created project (Komplettera)
+     */
+    public function edit()
+    {
+
+    }
+
+    /**
+     * Store the updated project in the database
+     */
+    public function update(Project $project)
+    {
+
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
