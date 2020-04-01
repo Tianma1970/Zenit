@@ -155,6 +155,14 @@ class CourseController extends Controller
     public function success()
     {
 
-        return view('/success');
+        $programs = Program::orderBy('name')->get();
+        $courses = Course::orderBy('title')->get();
+        $projects = Project::orderBy('title')->get();
+
+        return view('/success', [
+            'programs'  => $programs,
+            'courses'   => $courses,
+            'projects'  => $projects
+        ]);
     }
 }
