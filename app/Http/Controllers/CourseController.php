@@ -150,4 +150,10 @@ class CourseController extends Controller
 
         return redirect('home')->with('status', 'Course deleted successfully');
     }
+
+    public function success()
+    {
+
+        return view('/success');
+    }
 }

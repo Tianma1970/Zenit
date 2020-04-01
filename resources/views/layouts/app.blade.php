@@ -41,7 +41,7 @@
                             Personligt
                             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Mål och Framsteg</a>
+                        <a class="dropdown-item" href="/success">Mål och Framsteg</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/memberOnlyPage">Din Sida</a>
