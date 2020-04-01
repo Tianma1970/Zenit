@@ -6,15 +6,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{__('Complete your Project')}}</div>
+                <div class="card-header">{{__('Complete Project:')}}&nbsp;{{$project->title}}</div>
                     <div class="card-body">
                         @include('partials/status')
                         <div class="jumbotron">
-                            <form method='post' action='/projects/'>
+                            <form method="post" action="/projects/{{ $project->id }}">
                                 @csrf
                                 @method('PUT')
                                 <!-- Courses -->
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="course_id">Course</label>
                                     <select id="course_id" name="course_id" class="form-control">
                                         <option value="">{{ __('Select the Project to be completted') }}</option>
@@ -28,7 +28,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
 
                                 <!--Project Author-->
                                 <div class="form-group">
