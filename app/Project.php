@@ -29,9 +29,9 @@ class Project extends Model
         'course_id' => NULL,
 
     ];
-    public function courses()
+    public function course()
     {
-        return $this->hasMany(Project::class);
+        return $this->belongsTo(Project::class);
     }
 
     public function comments()
