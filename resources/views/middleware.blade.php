@@ -17,8 +17,11 @@
                                    <li>
                                        {{ $project->title }}<br>
                                        {{ $project->content }}<br>
-                                       <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><hr>
-                                    </li>
+                                       <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><br>
+                                       @if($project->completed === 0)
+                                       <a href="/projects/edit" class="btn btn-danger">Komplettera {{$project->title}}</a>
+                                       @endif
+                                    </li><hr>
 
                            @endforeach
                            </ul>
