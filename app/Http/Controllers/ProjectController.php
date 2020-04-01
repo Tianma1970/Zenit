@@ -41,7 +41,10 @@ class ProjectController extends Controller
      */
     public function edit()
     {
-
+        $projects = Project::orderBy('title')->get();
+        return view('projects/edit', [
+            'projects'  => $projects
+        ]);
     }
 
     /**
