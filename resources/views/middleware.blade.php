@@ -20,7 +20,7 @@
                                        <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><br>
                                     </li>
                                     @if($project->completed === 0)
-                                    <a href="/projects/edit" class="btn btn-danger">{{ __('Complete your Project') }}</a>
+                                    <a href="/projects/{{ $project->id }}/edit" class="btn btn-danger">{{ __('Complete your Project') }}</a>
                                     @endif
                                     <hr>
                                     @endforeach
