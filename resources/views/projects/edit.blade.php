@@ -10,11 +10,11 @@
                     <div class="card-body">
                         @include('partials/status')
                         <div class="jumbotron">
-                            <form method="post" action="/projects/{{ $project->id }}">
+                            <form method="post" action="/project/{{ $project->id }}/update">
                                 @csrf
                                 @method('PUT')
-                                <!-- Courses -->
-                                {{-- <div class="form-group">
+                                {{-- <!-- Courses -->
+                                <div class="form-group">
                                     <label for="course_id">Course</label>
                                     <select id="course_id" name="course_id" class="form-control">
                                         <option value="">{{ __('Select the Project to be completted') }}</option>
