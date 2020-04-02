@@ -39,20 +39,37 @@ class ProjectController extends Controller
     /**
      * Edit a newly created project (Komplettera)
      */
-    public function edit()
+    public function edit(Project $project)
     {
         $projects = Project::orderBy('title')->get();
         return view('projects/edit', [
+            'project'   => $project,
             'projects'  => $projects
+
         ]);
+
     }
 
     /**
      * Store the updated project in the database
      */
-    public function update(Project $project)
+    public function update(Request $request, Project $project)
     {
 
+        $validData = $request->validate([
+        'author'    => 'required',
+        'title'     => 'required',
+        'content'   => 'required'
+        ]);
+
+        $project->author =   $validData['author'];
+        $project->title =   $validData['title'];
+        $project->content =   $validData['content'];
+
+        $project->save();
+
+
+        return redirect('home')->with('status', 'You completed your Project');
     }
 
     /**
