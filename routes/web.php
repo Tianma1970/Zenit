@@ -51,7 +51,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
     Route::get('/motto/create', 'MottoController@create');
     Route::post('/motto', 'MottoController@store');
     Route::get('/success', 'CourseController@success');
-    Route::put('/projects/{$project}', 'ProjectController@update');
+    Route::put('/project/{project}/update', 'ProjectController@update');
     Route::get('/projects/{project}/edit', 'ProjectController@edit');
 });
 
