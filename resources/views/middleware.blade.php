@@ -8,7 +8,7 @@
        <div class="col-6">
            <div class="card">
                <div class="card-header text-center">
-                   {{ Auth::user()->name }}s Projects
+                   {{ Auth::user()->name }}{{__('s Projects')}}
                 </div>
                <div class="card-body">
 
@@ -17,7 +17,7 @@
                                    <li>
                                        {{ $project->title }}<br>
                                        {{ $project->content }}<br>
-                                       <small>Project created at:&nbsp;<i>{{ $project->updated_at }}</i></small><br>
+                                       <small>{{__('Project created at:')}}&nbsp;<i>{{ $project->updated_at }}</i></small><br>
                                     </li>
                                     @if($project->completed === 0)
                                     <a href="/projects/{{ $project->id }}/edit" class="btn btn-danger">{{ __('Complete your Project') }}</a>
@@ -34,7 +34,7 @@
        <div class="col-6">
            <div class="card">
                <div class="card-header text-center">
-                               Comments for {{Auth::user()->name }}s Projects
+                               {{__('Comments for ')}}{{Auth::user()->name }}{{__('s Projects')}}
                </div>
                <div class="card-body">
                    <div class="card-text text-center">
@@ -62,7 +62,7 @@
 </div>
                         @else
                     <div class="card-header text-center">
-                        Incomming projects for {{ Auth::user()->program->name }}
+                        {{__('Incomming projects for ')}}{{ Auth::user()->program->name }}
                     </div>
 
                         <div class="card-body">
@@ -72,23 +72,23 @@
                                         @foreach(Auth::user()->program->projects as $project)
                                             @if(Auth::user()->type === 'admin')
                                                 <h3>{{ $project->title }}</h3>
-                                                <p>Author: {{ $project->author }}</p>
+                                                <p>{{__('Author: ')}}{{ $project->author }}</p>
                                                 {{ $project->content}}<br>
-                                                <small>Project created at <i>{{ $project->updated_at }}</i></small><br>
+                                                <small>{{__('Project created at ')}}<i>{{ $project->updated_at }}</i></small><br>
                                                 <form method="POST" action="/project/{{$project->id}}/check">
                                                     @csrf
                                                     <input type="checkbox" name="completed" value="1" onClick="this.form.submit();"
                                                     @if($project->completed)
                                                         checked
                                                     @endif
-                                                >&nbsp;completed?
+                                                >&nbsp;{{__('completed?')}}
                                                 </form>
 
                                                 @if(Auth::user()->projects->count() > 1)
                                                 <hr>
                                                 @endif
                                                 @if(Auth::user()->type === 'admin')
-                                                <a href="/projects/comment" class="btn btn-info mt-3">create a comment</a>
+                                                <a href="/projects/comment" class="btn btn-info mt-3">{{__('create a comment')}}</a>
                                             @endif
                                         @endif
                                         @endforeach

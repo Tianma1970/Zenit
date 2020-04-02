@@ -5,7 +5,7 @@
     @include('partials/status')
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <div class="card-header">Courses</div>
+            <div class="card-header">{{__('Courses')}}</div>
             <div class="accordion mt-3" id="accordionExample">
             @foreach(Auth::user()->program->courses  as $course)
             <div class="card">
@@ -29,9 +29,9 @@
                             </form>
                         @endif
                         <hr>
-                        <small>{{ $course->points }} YH poäng</small><br>
+                        <small>{{ $course->points }}{{__('Points')}}</small><br>
                         @if(Auth::user()->type === 'member')
-                            <a href="projects/create" class="btn btn-info mt-3">Ladda upp dit projekt</a>
+                            <a href="projects/create" class="btn btn-info mt-3">{{__('Upload your project')}}</a>
                         @endif
                     </div>
                 </div>
@@ -41,8 +41,8 @@
         </div>
         <div class="col-md-5">
             <div class="card">
-                <div class="card-header">Welcome: {{ Auth::user()->name }},
-                    you are logged in as a <strong>{{ strtoupper(Auth::user()->type )}}</strong>! for {{ Auth::user()->program->name }}<br>
+                <div class="card-header">{{__('Welcome:')}} {{ Auth::user()->name }},
+                    {{__('you are logged in as a')}} <strong>{{ strtoupper(Auth::user()->type )}}</strong>! for {{ Auth::user()->program->name }}<br>
                 </div>
 
                 <div class="card-body">
@@ -62,14 +62,14 @@
                         <p>Your Motto is: {{ Auth::user()->motto }}</p>
                     </div>
                     @endif
-                    Member Page: <a href="{{ url('/')}}/memberOnlyPage">Member</a><br>
-                    Admin Page: <a href="{{ url('/')}}/adminOnlyPage">Admin</a>
+                    Member Page: <a href="{{ url('/')}}/memberOnlyPage">{{__('Member')}}</a><br>
+                    Admin Page: <a href="{{ url('/')}}/adminOnlyPage">{{__('Admin')}}</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card">
-                <div class="card-header">News</div>
+                <div class="card-header">{{__('News')}}</div>
                 <div class="card-body">
                     <ul>
                         @foreach(Auth::user()->program->news as $news)
@@ -81,7 +81,7 @@
                             <p>{{ $news->content }}</p></li>
 
                             @if($news->author)
-                                <small><i>written by</i> {{ $news->author }}</small>
+                                <small><i>{{__('written by')}}</i> {{ $news->author }}</small>
                             @endif
                             <hr>
                         @endforeach

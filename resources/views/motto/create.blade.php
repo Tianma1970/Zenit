@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Create your Motto</div>
+                <div class="card-header">{{__('Create your Motto')}}</div>
                 @include('partials/error')
                     <div class="card-body">
                         <div class="jumbotron">
@@ -14,7 +14,7 @@
                                 <form method="POST" action="/motto">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="motto">Your Motto</label>
+                                        <label for="motto">{{__('Your Motto')}}</label>
                                         <input type="textarea" id="content" name="content" required value="{{ old('motto') }}" placeholder="Motto" class="form-control">
                                     </div>
 

@@ -24,17 +24,17 @@
                             <!--Content-->
 
                             <div class="form-group">
-                                <label for="post_id">Project</label>
+                                <label for="post_id">{{__('Project')}}</label>
                                 <select id="project_id" name="project_id"
                                 class="form-control">
-                                <option value="">Select the project you want to comment</option>
+                                <option value="">{{__('Select the project you want to comment')}}</option>
                                 @foreach(Auth::user()->program->projects as $project)
                                 <option value="{{ $project->id }}"
                                 @if($project->id == old('project_id'))
                                 selected
                                 @endif
                                 >
-                                    {{ $project->title }} created by
+                                    {{ $project->title }} {{__('created by')}}
                                     {{ $project->author }}
                                 </option>
                                 @endforeach
@@ -43,7 +43,7 @@
 
                             <!--Content-->
                             <div class="form-group">
-                                <label for="comments">Comment</label>
+                                <label for="comments">{{__('Comment')}}</label>
                                 <textarea id="comments" name="comments"
                                 class="form-control" placeholder="Your Comment"></textarea>
                             </div>

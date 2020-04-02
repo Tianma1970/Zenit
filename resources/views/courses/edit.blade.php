@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Edit {{ $course->title }}</div>
+                <div class="card-header">{{__('Edit')}} {{ $course->title }}</div>
                     <div class="card-body">
                         <div class="jumbotron">
 
@@ -20,7 +20,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="title">Title</label>
+                                                <label for="title">{{__('Title')}}</label>
                                                 <input type="text" id="title"
                                                   name="title" required value="{{ old('title') ? old('title') : $course->title }}"
                                                   placeholder="Titel"
@@ -32,7 +32,7 @@
 
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="points">Points</label>
+                                                <label for="points">{{__('Points')}}</label>
                                                 <input type="text" id="points"
                                                   name="points" required value="{{ old('points') ? old('points') : $course->points }}"
                                                   placeholder="YH poäng"
@@ -43,7 +43,7 @@
 
                                     <!--Goal-->
                                     <div class="form-group">
-                                        <label for="goal">Goal</label>
+                                        <label for="goal">{{__('Goal')}}</label>
                                         <input type="textarea" id="goal" name="goal"
                                          class="form-control" value="{{ old('goal') ? old('goal') : $course->goal }}"placeholder="Syfte och mål">{{ old('goal') }}
                                     </div>
@@ -51,7 +51,7 @@
                                     <!--Content-->
 
                                     <div class="form-group">
-                                        <label for="content">Content</label>
+                                        <label for="content">{{__('Content')}}</label>
                                         <input type="textarea" id="content" name="content"
                                          class="form-control" required value="{{ old('content') ? old('content') : $course->content }}"placeholder="Kursens innehåll">{{ old('content') }}</textarea>
                                     </div>
@@ -59,7 +59,7 @@
                                     <!--Knowledge-->
 
                                     <div class="form-group">
-                                        <label for="knowledge">Knowledge</label>
+                                        <label for="knowledge">{{__('Knowledge')}}</label>
                                         <input type="textarea" id="knowledge" name="knowledge"
                                          class="form-control" required value="{{ old('knowledge') ? old('knowledge') : $course->knowledge }}"placeholder="Kunskaper">{{ old('knowledge') }}
                                     </div>
@@ -67,7 +67,7 @@
                                     <!--Skills-->
 
                                     <div class="form-group">
-                                        <label for="skills">Skills</label>
+                                        <label for="skills">{{__('Skills')}}</label>
                                         <input type="textarea" id="skills" name="skills"
                                          class="form-control" required value="{{ old('skills') ? old('skills') : $course->skills }}"placeholder="Färdigheter">{{ old('skills') }}
                                     </div>
@@ -75,7 +75,7 @@
                                     <!--Competence-->
 
                                     <div class="form-group">
-                                        <label for="competence">Competence</label>
+                                        <label for="competence">{{__('Competence')}}</label>
                                         <input type="textarea" id="competence" name="competence"
                                          class="form-control" required value="{{ old('competence') ? old('competence') : $course->competence }}"placeholder="Kompetenser">{{ old('competence') }}
                                     </div>
@@ -83,7 +83,7 @@
                                     <!--Forms-->
 
                                      <div class="form-group">
-                                        <label for="forms">Forms</label>
+                                        <label for="forms">{{__('Forms')}}</label>
                                         <input type="textarea" id="forms" name="forms"
                                          class="form-control" required value="{{ old('forms') ? old('forms') : $course->forms }}"placeholder="Betygskriterier">{{ old('forms') }}
                                     </div>
@@ -91,7 +91,7 @@
                                     <!--Literature-->
 
                                      <div class="form-group">
-                                        <label for="literature">Literature</label>
+                                        <label for="literature">{{__('Literature')}}</label>
                                         <input type="textarea" id="literature" name="literature"
                                          class="form-control" required value="{{ old('literature') ? old('literature') : $course->literature }}"placeholder="Rekommenderad litteratur och dokumentation">{{ old ('literature') }}
                                     </div>

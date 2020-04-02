@@ -18,9 +18,9 @@
                             <!--Program-->
 
                                 <div class="form-group">
-                                    <label for="program_id">Program</label>
+                                    <label for="program_id">{{__('Program')}}</label>
                                     <select id="program_id" name="program_id" class="form-control">
-                                        <option value="">Please select a program</option>
+                                        <option value="">{{__('Please select a program')}}</option>
                                         @foreach($programs as $program)
                                         <option value="{{ $program->id }}"
                                         @if($program->id == old('program_id'))
@@ -37,7 +37,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="title">Title</label>
+                                                <label for="title">{{__('Title')}}</label>
                                                 <input type="text" id="title"
                                                   name="title" value="{{ old('title') }}"
                                                   placeholder="Titel"
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="points">Points</label>
+                                                <label for="points">{{__('Points')}}</label>
                                                 <input type="text" id="points"
                                                   name="points" value="{{ old('title') }}"
                                                   placeholder="YH poäng"
@@ -57,7 +57,7 @@
 
                                     <!--Goal-->
                                         <div class="form-group">
-                                            <label for="goal">Goal</label>
+                                            <label for="goal">{{__('Goal')}}</label>
                                             <textarea id="goal" name="goal"
                                             class="form-control" placeholder="Syfte och mål">{{ old('goal') }}</textarea>
                                         </div>
@@ -65,42 +65,42 @@
                                     <!--Content-->
 
                                     <div class="form-group">
-                                        <label for="content">Content</label>
+                                        <label for="content">{{__('Content')}}</label>
                                         <textarea id="content" name="content"
                                          class="form-control" placeholder="Kursbeskrivning">{{ old('content') }}</textarea>
                                     </div>
 
                                     <!--Knowledge-->
                                         <div class="form-group">
-                                            <label for="knowledge">Knowledge</label>
+                                            <label for="knowledge">{{__('Knowledge')}}</label>
                                             <textarea id="knowledge" name="knowledge"
                                              class="form-control" placeholder="Kunskaper (optional)">{{ old('knowledge') }}</textarea>
                                         </div>
 
                                     <!--Skills-->
                                         <div class="form-group">
-                                            <label for="skills">Skills</label>
+                                            <label for="skills">{{__('Skills')}}</label>
                                             <textarea id="skills" name="skills"
                                              class="form-control" placeholder="Färdigheter">{{ old('skills') }}</textarea>
                                         </div>
 
                                     <!--Competence-->
                                         <div class="form-group">
-                                            <label for="competence">Competence</label>
+                                            <label for="competence">{{__('Competence')}}</label>
                                             <textarea id="competence" name="competence"
                                              class="form-control" placeholder="Kompetenser (optional)">{{ old('competence') }}</textarea>
                                         </div>
 
                                     <!--Forms-->
                                         <div class="form-group">
-                                            <label for="forms">Forms</label>
+                                            <label for="forms">{{__('Forms')}}</label>
                                             <textarea id="forms" name="forms"
                                              class="form-control" placeholder="Betygskriterier (optional)">{{ old('forms') }}</textarea>
                                         </div>
 
                                     <!Literature-->
                                         <div class="form-group">
-                                            <label for="literature">Literature</label>
+                                            <label for="literature">{{__('Literature')}}</label>
                                             <textarea id="literature" name="literature"
                                              class="form-control" placeholder="Rekommenderad litteratur och dokumentation">{{ old('literature') }}</textarea>
                                         </div>

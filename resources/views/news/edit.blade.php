@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container">
-        <h1>Edit {{ $news->title }}</h1>
+        <h1>Edit: {{ $news->title }}</h1>
 
         <form method="POST" action="/news/{{ $news->id }}" class="col-6">
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="title">Titel</label>
+                <label for="title">{{__('Title')}}</label>
                 <input type="title" id="title"
                   name="title" required value="{{ old('title') ? old('title') : $news->title }}"
                   placeholder="Title"
@@ -17,7 +17,7 @@
             </div>
 
             <div class="form-group">
-                <label for="author">Author</label>
+                <label for="author">{{__('Author')}}</label>
                 <input type="author" id="author"
                   name="author" required value="{{ old('author') ? old('author') : $news->author }}"
                   placeholder="Author"
@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-                <label for="content">Content</label>
+                <label for="content">{{__('Content')}}</label>
                 <input type="text-area" id="content"
                   name="content" required value="{{ old('content') ? old('content') : $news->content }}"
                   placeholder="Content"

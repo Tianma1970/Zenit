@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Add some News</div>
+                <div class="card-header">{{__('Add some News')}}</div>
                 @include('partials/error')
                     <div class="card-body">
                         <div class="jumbotron">
@@ -17,9 +17,9 @@
                                     <form method="POST" action="/news" class="col-6">
                                         @csrf
                                     <div class="form-group">
-                                        <label for="program_id">Program</label>
+                                        <label for="program_id">{{__('Program')}}</label>
                                         <select id="program_id" name="program_id" class="form-control">
-                                        <option value="">Please select a program</option>
+                                        <option value="">{{__('Please select a program')}}</option>
                                         @foreach($programs as $program)
                                         <option value="{{ $program->id }}"
                                         @if($program->id == old('program_id'))
@@ -32,7 +32,7 @@
                                         </select>
                                     </div>
                                         <div class="form-group">
-                                            <label for="title">Titel</label>
+                                            <label for="title">{{__('Title')}}</label>
                                             <input type="title" id="title"
                                               name="title" required value="{{ old('title') }}"
                                               placeholder="Title"
@@ -40,7 +40,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="author">Author</label>
+                                            <label for="author">{{__('Author')}}</label>
                                             <input type="author" id="author"
                                               name="author" required value="{{ old('author') }}"
                                               placeholder="author"
@@ -48,7 +48,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="content">Content</label>
+                                            <label for="content">{{__('Content')}}</label>
                                             <textarea id="content" placeholder="Content"
                                               name="content" required value="{{ old('content') }}"
                                               class="form-control">

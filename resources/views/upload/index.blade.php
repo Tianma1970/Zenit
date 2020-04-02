@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Upload your profile Picture</div>
+                <div class="card-header">{{__('Upload your profile Picture')}}</div>
                     <div class="card-body">
                         {{-- @include('partials/status') --}}
                         <div class="jumbotron">

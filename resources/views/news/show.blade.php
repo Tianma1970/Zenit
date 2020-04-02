@@ -14,7 +14,7 @@
 
     </div>
     @if(Auth::user()->type === 'admin')
-        <a href="/news/{{ $news->id}}/edit" class="btn btn-success">Edit News</a>
+        <a href="/news/{{ $news->id}}/edit" class="btn btn-success">{{__('Edit:')}}&nbsp;{{$news->title}}</a>
         <form method="post" action="/news/{{ $news->id }}">
             @csrf
             @method("DELETE")

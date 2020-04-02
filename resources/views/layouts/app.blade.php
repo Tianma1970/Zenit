@@ -41,10 +41,10 @@
                             Personligt
                             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/success">Mål och Framsteg</a>
+                        <a class="dropdown-item" href="/success">{{__('Your success')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/memberOnlyPage">Din Sida</a>
+                            <a class="nav-link" href="/memberOnlyPage">{{__('Your Page')}}</a>
                         </li>
                         @endif
 
@@ -58,9 +58,9 @@
                             Add
                             </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/programs/create">create a program</a>
-                        <a class="dropdown-item" href="/courses/create">create a course</a>
-                        <a class="dropdown-item" href="/news/create">add some news</a>
+                        <a class="dropdown-item" href="/programs/create">{{__('Create a program')}}</a>
+                        <a class="dropdown-item" href="/courses/create">{{__('Create a course')}}</a>
+                        <a class="dropdown-item" href="/news/create">{{__('Add some news')}}</a>
                         </li>
 
 
@@ -105,7 +105,7 @@
                                     @endif
                                     @if(Auth::user()->type === 'admin')
 
-                                    <a class="dropdown-item" href="uploadLogo">add site logo</a>
+                                    <a class="dropdown-item" href="uploadLogo">{{__('Add site logo')}}</a>
 
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"

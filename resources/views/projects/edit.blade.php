@@ -32,25 +32,25 @@
 
                                 <!--Project Author-->
                                 <div class="form-group">
-                                <label for="title">Author</label>
+                                <label for="title">{{__('Author')}}</label>
                                 <input type="textarea" required value="{{ old('author') ? old('author') : $project->author}}" name="author" class="form-control">
                                 </div>
 
                                 <!--Project Title-->
                                 <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="title">{{__('Title')}}</label>
                                 <input type="textarea" required value="{{old('title') ? old('title') : $project->title}}"name="title" class="form-control" >
                                 </div>
 
                                 <!--Project Content-->
                                 <div class="form-group">
-                                <label for="content">Content</label>
+                                <label for="content">{{__('Content')}}</label>
                                 <input id="textarea" required value="{{old('content') ? old('content') : $project->content}}"name="content" class="form-control"></input>
                                 </div>
 
                                 <!--Submit-->
                                 <div>
-                                    <input type="submit" value="Lämna in" class="btn btn-success">
+                                    <input type="submit" value="Complete" class="btn btn-success">
                                 </div>
 
                             </form>
