@@ -41,10 +41,12 @@
                             class="form-control">
                         </div>
 
-                        <!--Submit-->
-                        <div class="form-group">
-                            <input type="submit" value="Edit News"
-                            class="btn btn-success">
+                        <div class="row justify-content-around">
+                            <!--Submit-->
+                            <div class="form-group">
+                                <input type="submit" value="Edit News" class="btn btn-success">
+                                <a href="/home" class="btn btn-info">{{ __('Back') }}</a>
+                            </div>
                         </div>
                     </div>
                 </form>

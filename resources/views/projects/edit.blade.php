@@ -49,12 +49,15 @@
                                 <label for="content">{{__('Content')}}</label>
                                 <input id="textarea" required value="{{old('content') ? old('content') : $project->content}}"name="content" class="form-control"></input>
                                 </div>
-
-                                <!--Submit-->
-                                <div>
-                                    <input type="submit" value="Complete" class="btn btn-success">
+                                <div class="row justify-content-around">
+                                    <!--Submit-->
+                                    <div class="form-group">
+                                        <div>
+                                            <input type="submit" value="Complete" class="btn btn-success">
+                                        </div>
+                                        <a href="/middleware" class="btn btn-info">{{ __('Back') }}</a>
+                                    </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>
