@@ -1,10 +1,10 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="container">
+    <div class="container col-8">
         <div class="card text-center">
             <div class="card-header">
-                <h1>{{ $news->title }}</h1>
+                <h3>{{ $news->title }}</h3>
             </div>
             <div class="card-body">
                 <p>{{ $news->content }}</p>
