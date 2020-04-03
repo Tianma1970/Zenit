@@ -10,7 +10,7 @@
                 <p>{{ $news->content }}</p>
             </div>
             <div class="card-footer">
-                <small>News created at <i>{{ $news->updated_at }}</i></small><br>
+                <small>News created at <i>{{ $news->updated_at }}</i> by {{ $news->author }}</small><br>
             </div>
         </div>
                 @if(Auth::user()->type === 'admin')
