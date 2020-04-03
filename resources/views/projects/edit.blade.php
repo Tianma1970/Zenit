@@ -6,7 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{__('Complete Project:')}}&nbsp;{{$project->title}}</div>
+                <div class="card-header text-center">
+                    <h3>{{__('Complete ')}}&nbsp;{{$project->title}}</h3>
+                </div>
                     <div class="card-body">
                         @include('partials/status')
                         <div class="jumbotron">
