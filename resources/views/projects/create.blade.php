@@ -46,10 +46,12 @@
                                 </div>
 
                                 <!--Submit-->
-                                <div>
-                                    <input type="submit" value="Upload" class="btn btn-success">
+                                <div class="row justify-content-around">
+                                    <div>
+                                        <input type="submit" value="Upload" class="btn btn-success">
+                                    </div>
+                                    <a href="/home" class="btn btn-info">{{ __('Back') }}</a>
                                 </div>
-
                             </form>
                         </div>
                     </div>
