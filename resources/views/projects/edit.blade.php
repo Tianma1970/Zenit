@@ -51,12 +51,12 @@
                                 </div>
                                 <div class="row justify-content-around">
                                     <!--Submit-->
-                                    <div class="form-group">
-                                        <div>
+
+                                        <div class="row justify-content-around">
                                             <input type="submit" value="Complete" class="btn btn-success">
                                         </div>
                                         <a href="/middleware" class="btn btn-info">{{ __('Back') }}</a>
-                                    </div>
+
                                 </div>
                             </form>
                         </div>
