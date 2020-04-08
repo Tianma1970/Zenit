@@ -8,7 +8,7 @@
         <ol>
         @foreach(Auth::user()->projects as $project)
             @if($project->comments)
-                @if($project->completed === 0)
+                @if($project->completed === 1)
 
                     <li>{{ $project->title }}</li>
 
