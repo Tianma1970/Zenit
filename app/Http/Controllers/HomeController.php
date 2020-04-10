@@ -47,12 +47,12 @@ class HomeController extends Controller
     public function member(Request $req)
     {
         $projects = Project::orderBy('title')->get();
-        $comments = Comment::orderBy('content')->get();
+        //$comments = Comment::orderBy('content')->get();
         $courses = Course::orderBy('title')->get();
 
         return view('middleware', [
             'projects'  => $projects,
-            'comments'  => $comments,
+            //'comments'  => $comments,
             'courses'   => $courses
         ])->withMessage("Member");
     }
