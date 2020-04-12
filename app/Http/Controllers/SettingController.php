@@ -23,7 +23,7 @@ class SettingController extends Controller
     {
 
         //dd('store');
-        $settings = Setting::find(1);
+        $settings = New Setting;
 
         $tmpImage = $request->file('image');
         $filename = 'site_logo' . '.' . $tmpImage->getClientOriginalExtension();

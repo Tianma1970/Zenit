@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCoursesTable extends Migration
+class MakeProgramIdUnsignedInUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('title');
-            $table->text('content');
-            $table->string('points');
-            $table->bigInteger('program_id');
+        Schema::table('users', function (Blueprint $table) {
+            $table->bigInteger('program_id')->unsigned()->change();
         });
     }
 
@@ -30,6 +25,8 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }
