@@ -27,9 +27,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-            {{--  @isset($settings->site_logo)  --}}
+            @if($settings->get())
                 <a href="/home"><img src="/uploads/{{ $settings->get()->site_logo }}" class="mt-1" width='130' height='30'></a>
-            {{--  @endisset  --}}
+            @endif
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
