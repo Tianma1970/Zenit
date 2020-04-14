@@ -7,6 +7,7 @@
         <div class="col-md-4">
             <div class="card-header">{{__('Courses')}}</div>
             <div class="accordion mt-3" id="accordionExample">
+            @if($courses->count() > 0)
             @foreach(Auth::user()->program->courses  as $course)
             <div class="card">
                 <div class="card-header" id="courseheading{{ $course->id }}">
@@ -37,19 +38,21 @@
                 </div>
             </div>
             @endforeach
+            @endif
         </div>
         </div>
         <div class="col-md-5">
             <div class="card">
+                @if($program)
                 <div class="card-header">{{__('Welcome:')}} {{ Auth::user()->name }},
                     {{__('you are logged in as a')}} <strong>{{ strtoupper(Auth::user()->type )}}</strong>! for {{ Auth::user()->program->name }}<br>
                 </div>
-
+                @endif
                 <div class="card-body">
                     @if(Auth::user()->type === 'member')
-                        {{--  @foreach($programs as $program)  --}}
+
                             <h4>Your Program is  {{ Auth::user()->program->name }}</h4><br>
-                        {{--  @endforeach  --}}
+
                     @endif
 
                     @if(Auth::user()->user_image)
@@ -72,6 +75,7 @@
                 <div class="card-header">{{__('News')}}</div>
                 <div class="card-body">
                     <ul>
+                        @if($news->count() > 0)
                         @foreach(Auth::user()->program->news as $news)
                         @if(Auth::user()->type === 'admin')
                         <li><h5><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h5>
@@ -85,6 +89,7 @@
                             @endif
                             <hr>
                         @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -57,7 +57,7 @@
 
                                         <!--Submit-->
                                         <div class="form-group">
-                                            <input type="submit" value="Add News"
+                                            <input type="submit" value="Save News"
                                             class="btn btn-success">
                                         </div>
 

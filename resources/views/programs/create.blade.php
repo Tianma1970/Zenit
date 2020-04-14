@@ -24,7 +24,7 @@
 
                             <!--Submit-->
                             <div class="form-group">
-                                <input type="submit" value="Spara utbildning" class="btn btn-success">
+                                <input type="submit" value="Save program" class="btn btn-success">
                             </div>
 
                             </form>

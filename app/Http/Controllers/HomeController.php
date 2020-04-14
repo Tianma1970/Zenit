@@ -34,7 +34,7 @@ class HomeController extends Controller
         $programs = Program::orderBy('name')->get();
         $program = Program::orderBy('name')->get();
         $projects = Project::orderBy('content')->get();
-
+        //dd($courses->count());
         return view('home', [
             'courses'   => $courses,
             'news'      => $news,
