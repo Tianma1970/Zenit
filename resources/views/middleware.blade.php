@@ -66,10 +66,10 @@
                     @foreach(Auth::user()->program->projects as $project)
                         @if(Auth::user()->type === 'admin')
                         <div class="text-center">
-                                                <h3>{{ $project->title }}</h3>
-                                                <p>{{__('Author: ')}}{{ $project->author }}</p>
+                            <h3>{{ $project->title }}</h3>
+                            <p>{{__('Author: ')}}{{ $project->author }}</p>
+                                {{ $project->content}}<br>
                         </div>
-                                                {{ $project->content}}<br>
                         <div class="text-center mt-3">
                             <small>{{__('Project created at ')}}<i>{{ $project->updated_at }}</i>
                             </small><br>
