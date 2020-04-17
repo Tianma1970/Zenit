@@ -97,11 +97,11 @@
                 <div class="card-header text-center">
                     {{__('Your Comments ')}}
                 </div>
-
-                @foreach(Auth::user()->program->projects as $project)
-                    <h3>{{ $project->title }}</h3><br>{{ $project->comments }}<hr>
-                @endforeach
-
+                <div class="text-center">
+                    @foreach(Auth::user()->program->projects as $project)
+                        <h3>{{ $project->title }}</h3><br>{{ $project->comments }}<hr>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

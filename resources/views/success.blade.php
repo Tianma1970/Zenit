@@ -4,7 +4,7 @@
 
 <div class="row justify-content-center">
     <div class="jumbotron col-8">
-        <h4 class="display-4">{{ __('Finished Courses') }}</h4>
+        <h4 class="display-6">Hi, {{ Auth::user()->name}}, {{ __('you finished') }}</h4>
         <ol>
         @foreach(Auth::user()->projects as $project)
             @if($project->comments)
