@@ -86,7 +86,7 @@
                                 <hr>
                             @endif
                             @if(Auth::user()->type === 'admin')
-                                <a href="/projects/comment" class="btn btn-info col-4 mt-3">{{__('create a comment')}}</a><hr>
+                                <a href="/projects/comment" class="btn btn-info col-4 mt-3">{{__('create a comment')}}</a>
                             @endif
                         @endif
                     @endforeach
