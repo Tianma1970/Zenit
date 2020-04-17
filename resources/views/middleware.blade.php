@@ -44,7 +44,7 @@
                             @endif
                             <li>
                                 {{$project->title}}<br>
-                                {{$project->comments}}<hr>
+                                {{$project->comments}}
                             </li>
                             </div>
                         @endif
@@ -99,7 +99,7 @@
                 </div>
                 <div class="text-center">
                     @foreach(Auth::user()->program->projects as $project)
-                        <h3>{{ $project->title }}</h3><br>{{ $project->comments }}<hr>
+                        <h3>{{ $project->title }}</h3><br>{{ $project->comments }}
                     @endforeach
                 </div>
             </div>
