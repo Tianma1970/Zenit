@@ -31,7 +31,7 @@ class Project extends Model
     ];
     public function course()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Course::class);
     }
 
     public function comments()
