@@ -10,7 +10,7 @@
                     <div class="card-body">
                         @include('partials/status')
                         <div class="jumbotron">
-                            <form method='post' action='/projects'>
+                            <form method='post' action='/project'>
                                 @csrf
                                 <!-- Courses -->
                                 <div class="form-group">
@@ -52,6 +52,49 @@
                                     </div>
                                     <a href="/home" class="btn btn-info">{{ __('Back') }}</a>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{__('Upload a file')}}</div>
+                    <div class="card-body">
+
+                        <div class="jumbotron">
+
+                            <!-- Message -->
+                            @if(Session::has('message'))
+                            <p >{{ Session::get('message') }}</p>
+                            @endif
+
+                            <!-- Form -->
+                            <form method="post" action="/FileUpload/" enctype='multipart/form-data' >
+                            @csrf
+                            <!-- Courses -->
+                                <div class="form-group">
+                                    <input type="hidden" name="id" value="{{ isset($var->id) ? $var->id : null }}"
+                                    <label for="course_id">{{__('Course')}}</label>
+                                    <select id="course_id" name="course_id" class="form-control">
+                                        <option value="">{{__('Please select a course')}}</option>
+                                        @foreach(Auth::user()->program->courses as $course)
+                                        <option value="{{ $course->id }}"
+                                        @if($course->id == old('course_id'))
+                                        selected
+                                        @endif
+                                        >{{ $course->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            <input type='file' name='projectfiles' >
+                            <input type='submit' name='submit' value='FileUpload'>
                             </form>
                         </div>
                     </div>

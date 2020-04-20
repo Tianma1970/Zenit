@@ -5,7 +5,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1>{{ $course->title }}</h1>
-            <small>{{__('Kursen är på')}} {{ $course->points }} {{__('YH poäng')}}</small><br><hr>
+            <small>{{__('The course gives you')}} {{ $course->points }} {{__('points')}}</small><br><hr>
             <h3>{{__('Goal')}}</h3>
             <p>{{ $course->goal }}</p><br>
             @if($course->knowledge)

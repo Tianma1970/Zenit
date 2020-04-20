@@ -80,7 +80,7 @@
                         @if(Auth::user()->type === 'admin')
                         <li><h5><a href="/news/{{ $news->id }}">{{ $news->title }}</a></h5>
                         @else
-                        <li><h3>{{ $news->title }}</h3>
+                        <li><h5>{{ $news->title }}</h5>
                         @endif
                             <p>{{ $news->content }}</p></li>
 

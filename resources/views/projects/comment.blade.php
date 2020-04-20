@@ -17,7 +17,7 @@
                             {{--  @include('partials/validation_errors')
                             @include('partials/status')  --}}
 
-                            <form method="POST" action="/project/" class="col-6">
+                            <form method="POST" action="/project/" class="col-12">
                             @csrf
                             @method('PUT')
 
@@ -44,14 +44,15 @@
                             <!--Content-->
                             <div class="form-group">
                                 <label for="comments">{{__('Comment')}}</label>
-                                <textarea id="comments" name="comments"
-                                class="form-control" placeholder="Your Comment"></textarea>
+                                <input id="textarea" name="comments"
+                                class="form-control" required value="{{ old('comments') ? old('comments') : $project->comments }}"></textarea>
                             </div>
 
                             <!--Submit-->
-                            <div class="form-group">
+                            <div class="row justify-content-around">
                                 <input type="submit" value="Add New Comment"
                                 class="btn btn-primary">
+                                <a href="/middleware" class="btn btn-info">{{ __('Back') }}</a>
                             </div>
 
                             </form>
