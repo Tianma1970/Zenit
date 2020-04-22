@@ -28,13 +28,8 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('news/show', 'NewsController@show');
-
-
-
 
 /**
  * Routes for member
@@ -46,7 +41,7 @@ Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function
     Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
 
     Route::post('/project', 'ProjectController@store');
-    //Route::post('FileUpload/', 'ProjectController@FileUpload');
+    Route::post('FileUpload/', 'ProjectController@FileUpload');
     Route::get('/projects/create', 'ProjectController@create');
     Route::get('/middleware', 'ProjectController@show');
     Route::get('/motto/create', 'MottoController@create');
@@ -74,8 +69,6 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::put('/project/', 'ProjectController@storeComment');
     Route::post('/project/{project}/check', 'ProjectController@check');
 
-    //Route::get('/register', 'Auth/RegisterController@getRegister');
-
     Route::get('uploadLogo', 'SettingController@index');
     Route::post('/uploadLogo', 'SettingController@uploadLogo');
 
@@ -89,7 +82,6 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/courses/{course}', 'CourseController@show');
-    //uploading profile picture
     Route::get('/upload', 'ProfilePictureController@index');
     Route::post('/store', 'ProfilePictureController@store');
     Route::get('comments/show', 'CommentController@show');
