@@ -34,7 +34,7 @@ class HomeController extends Controller
         $programs = Program::orderBy('name')->get();
         $program = Program::orderBy('name')->get();
         $projects = Project::orderBy('content')->get();
-        //dd($courses->count());
+
         return view('home', [
             'courses'   => $courses,
             'news'      => $news,
@@ -47,12 +47,10 @@ class HomeController extends Controller
     public function member(Request $req)
     {
         $projects = Project::orderBy('title')->get();
-        //$comments = Comment::orderBy('content')->get();
         $courses = Course::orderBy('title')->get();
 
         return view('middleware', [
             'projects'  => $projects,
-            //'comments'  => $comments,
             'courses'   => $courses
         ])->withMessage("Member");
     }

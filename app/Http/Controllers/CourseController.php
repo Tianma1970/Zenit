@@ -68,13 +68,7 @@ class CourseController extends Controller
             'content'       => 'required',
             'points'        => 'required',
             'goal'          => 'required',
-            //optional: created if statement in show.blade.php
-            //'knowledge'     => 'required',
             'skills'        => 'required',
-            //optional: created if statement in show.blade.php
-            //'competence'    => 'required',
-            //optional: created if statement in show.blade.php
-            //'forms'         => 'required',
             'literature'    => 'required',
         ]);
 

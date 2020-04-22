@@ -22,15 +22,11 @@ class SettingController extends Controller
     public function uploadLogo(Request $request)
     {
 
-        //dd('store');
         $settings = New Setting;
 
         $tmpImage = $request->file('image');
         $filename = 'site_logo' . '.' . $tmpImage->getClientOriginalExtension();
         $tmpImage->move('uploads', $filename);
-
-        //dd($filename);
-
 
         $settings->site_logo = $filename;
 
