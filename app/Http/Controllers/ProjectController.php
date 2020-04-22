@@ -85,7 +85,8 @@ class ProjectController extends Controller
             'course_id' => 'required',
             'author'    => 'required',
             'title'     => 'required',
-            'content'   => 'required'
+            'content'   => 'required',
+            'project_url' => 'required'
 
             ]);
 

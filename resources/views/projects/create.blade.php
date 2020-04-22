@@ -49,6 +49,13 @@
                                 </div>
                                 <!--/Project Content-->
 
+                                <!--Project URL-->
+                                <div class="form-group">
+                                <label for="project_url">{{__('Project URL')}}</label>
+                                <textarea id="content" name="project_url" class="form-control" placeholder="Here you can paste your Project URL" cols="10"></textarea>
+                                </div>
+                                <!--/Project URL-->
+
                                 <!--Submit-->
                                 <div class="row justify-content-around">
                                     <div>

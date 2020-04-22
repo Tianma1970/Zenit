@@ -16,7 +16,10 @@
                     @foreach(Auth::user()->projects as $project)
                         <li>
                             {{ $project->title }}<br>
-                            {{ $project->content }}<br>
+                            {{ $project->content }}<br><br>
+                            @if($project->project_url)
+                                <i>{{ __('Website:') }}</i>&nbsp;<a href="{{ $project->project_url }}" target="_blank">{{ $project->project_url }}</a><br>
+                                @endif
                             <small>{{__('Project created at:')}}&nbsp;<i>{{ $project->updated_at }}</i></small><br>
                         </li>
                         @if($project->completed === 0)
@@ -70,7 +73,11 @@
                         <div class="text-center">
                             <h3>{{ $project->title }}</h3>
                             <p>{{__('Author: ')}}{{ $project->author }}</p>
-                                {{ $project->content}}<br>
+                                {{ $project->content}}<br><br>
+                                @if($project->project_url)
+                                <i>{{ __('Website:') }}</i>&nbsp;<a href="{{ $project->project_url }}" target="_blank">{{ $project->project_url }}</a><br>
+                                @endif
+
                         </div>
                         <div class="text-center mt-3">
                             <small>{{__('Project created at ')}}<i>{{ $project->updated_at }}</i>
@@ -88,7 +95,7 @@
                                 <hr>
                             @endif
                             @if(Auth::user()->type === 'admin')
-                                <a href="/projects/comment" class="btn btn-info col-4 mt-3">{{__('create a comment')}}</a>
+                                <a href="/projects/comment" class="btn btn-info col-4 mt-3">{{__('create a comment')}}</a><hr>
                             @endif
                         @endif
                     @endforeach
@@ -101,7 +108,7 @@
                 </div>
                 <div class="text-center">
                     @foreach(Auth::user()->program->projects as $project)
-                        <h3>{{ $project->title }}</h3><br>{{ $project->comments }}
+                        <h3>{{ $project->title }}</h3><br>{{ $project->comments }}<hr><br>
                     @endforeach
                 </div>
             </div>
