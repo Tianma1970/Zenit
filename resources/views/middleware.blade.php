@@ -3,6 +3,7 @@
 @section('content')
 
 @if(Auth::user()->type === 'member')
+<!--The member part-->
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -54,8 +55,9 @@
                </div>
            </div>
        </div>
-
+<!--/The member part-->
 @else
+<!--The admin part-->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
@@ -106,5 +108,7 @@
         </div>
     </div>
 </div>
+
+<!--/The admin part-->
 @endif
 @endsection

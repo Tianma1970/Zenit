@@ -15,34 +15,20 @@
                             <form method="post" action="/project/{{ $project->id }}/update">
                                 @csrf
                                 @method('PUT')
-                                {{-- <!-- Courses -->
-                                <div class="form-group">
-                                    <label for="course_id">Course</label>
-                                    <select id="course_id" name="course_id" class="form-control">
-                                        <option value="">{{ __('Select the Project to be completted') }}</option>
-                                        @foreach(Auth::user()->projects as $project)
-                                        @if($project->completed === 0)
-                                        <option value="{{ $project->id }}"
-                                        @if($project->id == old('project_id'))
-                                        selected
-                                        @endif
-                                        >{{ $project->title }}</option>
-                                        @endif
-                                        @endforeach
-                                    </select>
-                                </div> --}}
 
                                 <!--Project Author-->
                                 <div class="form-group">
                                 <label for="title">{{__('Author')}}</label>
                                 <input type="textarea" required value="{{ old('author') ? old('author') : $project->author}}" name="author" class="form-control">
                                 </div>
+                                <!--/Project Author-->
 
                                 <!--Project Title-->
                                 <div class="form-group">
                                 <label for="title">{{__('Title')}}</label>
                                 <input type="textarea" required value="{{old('title') ? old('title') : $project->title}}"name="title" class="form-control" >
                                 </div>
+                                <!--/Project Title-->
 
                                 <!--Project Content-->
                                 <div class="form-group">
@@ -50,14 +36,14 @@
                                 <input id="textarea" required value="{{old('content') ? old('content') : $project->content}}"name="content" class="form-control"></input>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <!--Submit-->
+                                <!--/Project Content-->
 
-                                        <div class="row justify-content-around">
-                                            <input type="submit" value="Complete" class="btn btn-success">
-                                        </div>
-                                        <a href="/middleware" class="btn btn-info">{{ __('Back') }}</a>
-
+                                <!--Buttons-->
+                                <div class="row justify-content-around">
+                                    <input type="submit" value="Complete" class="btn btn-success">
                                 </div>
+                                <a href="/middleware" class="btn btn-info">{{ __('Back') }}</a>
+                                <!--/Buttons-->
                             </form>
                         </div>
                     </div>

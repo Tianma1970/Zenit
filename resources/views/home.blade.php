@@ -4,6 +4,8 @@
 <div class="container">
     @include('partials/status')
     <div class="row justify-content-center">
+
+        <!--Bootstrap Akkordion-->
         <div class="col-md-4">
             <div class="card-header">{{__('Courses')}}</div>
             <div class="accordion mt-3" id="accordionExample">
@@ -40,7 +42,10 @@
             @endforeach
             @endif
         </div>
-        </div>
+    </div>
+    <!--/Bootstrap Akkordion-->
+
+    <!--The Profile part-->
         <div class="col-md-5">
             <div class="card">
                 @if($program)
@@ -70,6 +75,9 @@
                 </div>
             </div>
         </div>
+        <!--/The Profile part-->
+
+        <!--The News part-->
         <div class="col-md-3">
             <div class="card">
                 <div class="card-header">{{__('News')}}</div>
@@ -95,5 +103,7 @@
             </div>
         </div>
     </div>
+    <!--The News part-->
+
 </div>
 @endsection

@@ -10,8 +10,9 @@
             @if($project->comments)
                 @if($project->completed === 1)
 
+            <!--Finished courses to be shown-->
                     <li>{{ $project->course->title }}</li>
-
+            <!--/Finished courses to be shown-->
                 @endif
             @endif
         @endforeach

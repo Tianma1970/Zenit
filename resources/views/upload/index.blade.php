@@ -8,17 +8,17 @@
             <div class="card">
                 <div class="card-header">{{__('Upload your profile Picture')}}</div>
                     <div class="card-body">
-                        {{-- @include('partials/status') --}}
                         <div class="jumbotron">
 
                             <!-- Message -->
                             @if(Session::has('message'))
                             <p >{{ Session::get('message') }}</p>
                             @endif
+                            <!--/Message-->
 
                             <!-- Form -->
                             <form method='post' action='/store' enctype='multipart/form-data' >
-                            {{ csrf_field() }}
+                            @csrf
                             <input type='file' name='image' >
                             <input type='submit' name='submit' value='Upload File'>
                             </form>
