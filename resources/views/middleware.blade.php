@@ -44,7 +44,7 @@
                             @if($project->completed === 0)
                             <div class="card text-white bg-danger mt-3">
                             @else
-                            <div class="card text-white bg-success mt-3"
+                            <div class="card text-white bg-success mt-3">
                             @endif
                             <li>
                                 {{$project->title}}<br>
