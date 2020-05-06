@@ -48,7 +48,7 @@
     <!--The Profile part-->
         <div class="col-md-5">
             <div class="card">
-                @if($program)
+                @if(Auth::user()->program)
                 <div class="card-header">{{__('Welcome:')}} {{ Auth::user()->name }},
                     {{__('you are logged in as a')}} <strong>{{ strtoupper(Auth::user()->type )}}</strong>! for {{ Auth::user()->program->name }}<br>
                 </div>
