@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <label for="knowledge">{{__('Knowledge')}}</label>
                                             <textarea id="knowledge" name="knowledge"
-                                             class="form-control" placeholder="Kunskaper (optional)">{{ old('knowledge') }}</textarea>
+                                             class="form-control" placeholder="Kunskaper">{{ old('knowledge') }}</textarea>
                                         </div>
 
                                     <!--Skills-->
@@ -88,14 +88,14 @@
                                         <div class="form-group">
                                             <label for="competence">{{__('Competence')}}</label>
                                             <textarea id="competence" name="competence"
-                                             class="form-control" placeholder="Kompetenser (optional)">{{ old('competence') }}</textarea>
+                                             class="form-control" placeholder="Kompetenser">{{ old('competence') }}</textarea>
                                         </div>
 
                                     <!--Forms-->
                                         <div class="form-group">
                                             <label for="forms">{{__('Forms')}}</label>
                                             <textarea id="forms" name="forms"
-                                             class="form-control" placeholder="Betygskriterier (optional)">{{ old('forms') }}</textarea>
+                                             class="form-control" placeholder="Betygskriterier">{{ old('forms') }}</textarea>
                                         </div>
 
                                     <!Literature-->
