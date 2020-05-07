@@ -16,6 +16,7 @@
                 @if(Auth::user()->type === 'admin')
                 <div class="row justify-content-around mt-5">
                     <a href="/news/{{ $news->id}}/edit" class="btn btn-info">{{__('Edit:')}}&nbsp;{{$news->title}}</a>
+                    <a href="/home" class="btn btn-info">{{__('Back')}}</a>
                     <form method="post" action="/news/{{ $news->id }}">
                         @csrf
                         @method("DELETE")
