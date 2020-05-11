@@ -67,6 +67,7 @@
                                 <select class="form-control" name="type" id="type">
                                     <option value="member">Member</option>
                                     <option value="admin">Admin</option>
+                                    <option value="superadmin">Super Admin</option>
                                 </select>
                             </div>
                         </div>

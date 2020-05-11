@@ -72,8 +72,20 @@ Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function(
     Route::get('uploadLogo', 'SettingController@index');
     Route::post('/uploadLogo', 'SettingController@uploadLogo');
 
+
+});
+
+/**
+ * Routes for SuperAdmin
+ */
+
+Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
+{
+    Route::match(['get', 'post'], '/SuperAdminOnlyPage/', 'HomeController@admin');
+
     Route::post('/programs', 'ProgramController@store');
     Route::get('programs/create', 'ProgramController@create');
+
 });
 
 /**

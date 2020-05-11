@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Auth::user()->type === 'superadmin')
+    <a href="/programs/create" class="btn btn-info">{{ __('Create a Program') }}</a>
+@else
 <div class="container">
     @include('partials/status')
     <div class="row justify-content-center">
@@ -106,4 +109,5 @@
     <!--The News part-->
 
 </div>
+@endif
 @endsection
